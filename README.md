@@ -8,13 +8,13 @@ Decks are written in a flavor of markdown in /decks/
 ## Deckdown / Deck.js flavored Markdown
 
 * Ordered/Unordered lists have class `slide` added to the list items
-* Headers are found anywhere in the text by a hash-space-text string (e.g. `# Header1`)
+* Headers are found anywhere in the text by a hash-space-text string e.g. `# Header1`
 * You can specify classes on headers ala `#.slide Slide Header` or `#.center Centered Header`
 * Indented code blocks are thrown into codemirror.
   * The first line can start with `.runnable [attributes]` to indicate the codemirror block should be runnable in-page
   * The [attributes] are appended to the code block
-  * You can specify highlighted portions via a "highlight" attribute with a specific syntax "`regex,line#:regex`" eg "`global,2:foo,3:bar`"
-  * specifying "code" as the first term on a line starts a code block. Useful for remote src grabbing with `code src="helloworld.js"`
+  * You can specify highlighted portions via a `highlight` attribute with a specific syntax `regex,line#:regex` eg `global,2:foo,3:bar`
+  * specifying `code` as the first term on a line starts a code block. Useful for remote src grabbing with `code src="helloworld.js"`
   * probably more!
 
 ## Generating the deck
@@ -22,17 +22,17 @@ Decks are written in a flavor of markdown in /decks/
 Via the query string you can specify the following parameters in order to generate the final deck
 
 * deckDir
-  * the basedir to find the deck pieces "./decks"
+  * the basedir to find the deck pieces default="./decks"
 * cssDir
-  * the css directory where themes are found "./css"
+  * the css directory where themes are found default="./css"
 * theme
-  * the css file (minus the extension) (try 'javascriptU' or 'web2.0')
+  * the css file (minus the extension) default="javascriptU" (try 'web2.0')
 * ext
-  * the extension to use for deck pieces ".md"
+  * the extension to use for deck pieces default=".md"
 * decks
   * the comma separated list of decks to retrieve and generate the presentation
 * intro
-  * boolean, whether or not to include the "intro" deck, defaults to true
+  * boolean, whether or not to include the "intro" deck, default=true
 * title
   * the title of the presentation document
 
