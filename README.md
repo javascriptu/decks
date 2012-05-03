@@ -1,8 +1,6 @@
 JavascriptU Slide Templates
 ===========================
 
-This is the template we will be using for all of our decks.
-
 Decks are written in a flavor of markdown in /decks/
 
 ## Deckdown / Deck.js flavored Markdown
