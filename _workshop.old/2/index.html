@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript University</title>
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <!-- Replace path with correct path to deck.core.css. -->
+  <link rel="stylesheet" href="../../css/deck.js/deck.core.css" type="text/css">
+  <link rel="stylesheet" href="../../css/deck.js/themes/javascriptU.css" type="text/css">
+  <link rel="stylesheet" href="../../css/deck.js/transitions/fade.css" type="text/css">
+
+  <link rel="stylesheet" href="../../scripts/extensions/menu/deck.menu.css">
+  <link rel="stylesheet" href="../../scripts/extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" href="../../scripts/extensions/status/deck.status.css">
+  <link rel="stylesheet" href="../../scripts/extensions/hash/deck.hash.css">
+  <link href='http://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
+
+  <!-- Any other extension CSS files go here. -->
+
+  <!-- Replace path with correct path to Modernizr file. -->
+  <script src="../../scripts/modernizr.custom.js"></script>
+  <style>
+    .container, html, body {
+      overflow : hidden !important;
+    }
+  </style>
+</head>
+<body class="deck-container">
+
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+
+<section class="slide" id="title-slide">
+  <h1><img src="../../img/JSULogo.png" alt="JavaScript University"></h1>
+
+  <h2>Open Source Education</h2>
+</section>
+
+<!-------------------------
+Introduction
+--------------------------->
+
+<section class="slide">
+  <h2>Workshop 1.2</h2>
+  <ul>
+    <li>
+      <h3>Network Connection Information</h3>
+      <p>Connect to "qguest", your login information is printed on your badge.</p>
+    </li>
+    <li>
+      <h3>Talk to us on Twitter</h3>
+      <p>Use hashtag: #sdjsu or Follow: @javascriptu</p>
+    </li>
+  </ul>
+</section>
+
+<!-- Frameworks are bad! -->
+<section class="slide">
+  <h1>JavaScript Frameworks are evil!</h1>
+</section>
+<section class="slide">
+  <h2>JavaScript Frameworks are evil!</h2>
+  <ul>
+    <li class="slide">Frameworks are just a tool to help you develop more quickly.</li>
+    <li class="slide">They can take care of a lot of the little details when writing code.</li>
+    <li class="slide">Use of a framework should be determined on a per-project basis.</li>
+    <li class="slide">Frameworks aren't evil, the people who use them incorrectly are.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h1>You need to learn JavaScript before using any frameworks!</h1>
+</section>
+<section class="slide">
+  <h2 class="center">Back in my day</h2>
+  <img src="../../img/workshop/2/old-man.jpg" alt="old man" />
+  <p class="center">We didn't have JavaScript frameworks. we had to write all of our own code and there was a war on so variables were scarce.</p>
+</section>
+<section class="slide">
+  <h2>You need to learn JavaScript</h2>
+  <ul>
+    <li class="slide">In a perfect world you should learn the ins and outs of a language.</li>
+    <li class="slide">
+      <p>The industry is changing.</p>
+      <ul>
+        <li class="slide">Everyone cannot be grouped in black &amp; white categories.</li>
+        <li class="slide">The traditional JavaScript "sandbox" is disappearing.</li>
+        <li class="slide">Sometimes a basic understanding is all that is needed.</li>
+      </ul>
+    </li>
+    <li class="slide">Playing around with a framework can help you get a better understanding of JavaScript.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2 class="center">Before anyone gets mad</h2>
+  <img src="../../img/workshop/2/get-mad.jpg" alt="don't get mad" />
+</section>
+<section class="slide">
+  <h2>Before anyone gets mad</h2>
+  <ul>
+    <li class="slide">
+      <p>It's important to learn about:</p>
+      <ul>
+        <li class="slide">What the framework does.</li>
+        <li class="slide">How it does it.</li>
+        <li class="slide">What the underlying code is doing.</li>
+        <li class="slide">The concepts and techniques its using to accomplish tasks.</li>
+      </ul>
+    </li>
+    <li class="slide">Keep an open mind. Frameworks are not always the answer, sometimes *your* framework isn't the best option.</li>
+    <li class="slide">Separate fact from hype, just because everyone is using __ this week doesn't mean you need to.</li>
+  </ul>
+</section>
+<!-- /Frameworks are bad! -->
+
+<!-- What we'll cover -->
+<section class="slide">
+  <h1 style="padding: 80px 0 5px 0;background-color: #fff;" class="focus-border"><img src="../../img/workshop/2/jquery-logo.png" alt="jQuery" /></h1>
+</section>
+<section class="slide">
+  <h2>jQuery</h2>
+  <ul>
+    <li class="slide">
+      <p>What we'll cover:</p>
+      <ul>
+        <li class="slide">How jQuery is built</li>
+        <li class="slide">Ways you can use jQuery</li>
+        <li class="slide">Selectors &amp; Sizzle</li>
+        <li class="slide">Ajax Requests</li>
+        <li class="slide">Event handling</li>
+        <li class="slide">Plugins</li>
+      </ul>
+    </li>
+    <li class="slide">
+      <p>What we aren't covering:</p>
+      <ul>
+        <li class="slide">Basic usage. There are plenty of tutorials online.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!-- /What we'll cover -->
+
+<section class="slide">
+  <h2>What is jQuery?</h2>
+  <ul>
+    <li class="slide">&quot;jQuery is a fast and concise JavaScript Library that simplifies HTML document traversing, event handling, animating, and Ajax interactions for rapid web development. jQuery is designed to change the way that you write JavaScript.&quot; &mdash; jQuery.com</li>
+  </ul>
+</section>
+
+<!-- jQuery is -->
+<section class="slide">
+  <h2>jQuery Is...</h2>
+  <ul>
+    <li class="slide">A JavaScript Library that handles cross-browser incompatibilities so your users will have a similar experience regardless of how they view your site.</li>
+    <li class="slide">A very small core that is extended through the use of plugins.</li>
+    <li class="slide">A Heavily overloaded function that allows you to do different things with it depending on which arguments (and types) are passed.</li>
+    <li class="slide">
+      <p>A factory function which when called wraps itself around all matching elements and returns an &quot;array-like&quot; object that is ready to be manipulated. The matched results from a call have properties like an object but allows you to treat it as an array.</p>
+      <pre><code src="../../code/jquery-is.js"></code></pre>
+    </li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>jQuery Is...</h2>
+  <ul>
+    <li>A JavaScript Library that handles cross-browser incompatibilities so your users will have a similar experience regardless of how they view your site.</li>
+    <li>A very small core that is extended through the use of plugins.</li>
+    <li>A Heavily overloaded function that allows you to do different things with it depending on which arguments (and types) are passed.</li>
+    <li>
+      <p>A factory function which when called wraps itself around all matching elements and returns an &quot;array-like&quot; object that is ready to be manipulated. The matched results from a call have properties like an object but allows you to treat it as an array.</p>
+      <pre><code src="../../code/jquery-is.js" data-highlight="1:\.hide\(\),2:\.length,3:\[*.?\]"></code></pre>
+    </li>
+  </ul>
+</section>
+<!-- /jQuery is -->
+
+<section class="slide">
+  <h2>Why Use jQuery?</h2>
+  <ul>
+    <li class="slide">
+      <p>Its Popular!</p>
+      <ul>
+        <li class="slide">Over 50% of the top 10,000 websites use jQuery.</li>
+      </ul>
+    </li>
+    <li class="slide">It has a large plugin library with good documentation and support for a lot of the code. jQuery team is currently revamping plugin site.</li>
+    <li class="slide">
+      <p>Simple learning curve, the code looks beautiful.</p>
+      <pre><code src="../../code/why-use-jquery.js"></code></pre>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Why Use jQuery?</h2>
+  <ul>
+    <li>
+      <p>API Documentation is Solid.</p>
+      <ul>
+        <li class="slide">Lots of clear explanations for functions and great code examples to help with getting started with jQuery.</li>
+      </ul>
+    </li>
+    <li class="slide">It's Awesome!</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Ways to use jQuery</h1>
+</section>
+
+<!-- Pass function to jQuery -->
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Passing a function to jQuery</h4>
+  <pre><code src="../../code/ways-to-use-jquery_1.js"></code></pre>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Passing a function to jQuery</h4>
+  <pre><code src="../../code/ways-to-use-jquery_1.js" data-highlight="1:*"></code></pre>
+  <ul>
+    <li>The easiest way is to pass jQuery an anonymous function to execute.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Passing a function to jQuery</h4>
+  <pre><code src="../../code/ways-to-use-jquery_1.js" data-highlight="3.4:*"></code></pre>
+  <ul>
+    <li>The easiest way is to pass jQuery an anonymous function to execute.</li>
+    <li>You can also pass it a named function.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h1>If that's your thing...</h1>
+</section>
+<section class="slide">
+  <h1>jQuery just wants you to be happy.</h1>
+</section>
+<section class="slide">
+  <h1>&lt;3 :)</h1>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Passing a function to jQuery</h4>
+  <ul>
+    <li>
+      <p>jQuery will fire this function when the DOM is ready to be manipulated.</p>
+      <pre><code src="../../code/ways-to-use-jquery_1.js"></code></pre>
+      <ul>
+        <li class="slide">Preferred over "document.onload" method.</li>
+        <li class="slide">It can be called multiple times.</li>
+        <li class="slide">Unlike "document.onload" the function fires before the page is completely loaded. You don't have to wait for all images to load before functions are called.</li>
+        <li class="slide"><strong>Note:</strong> jQuery has a "load" method that is similar to "document.onload" if that feature is desired.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!-- /Pass function to jQuery -->
+
+<!-- Creating HTML Elements -->
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_1.js"></code></pre>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_1.js" data-highlight="1.2.3:(getElementById|createElement|appendChild)"></code></pre>
+  <ul>
+    <li>A longer process for creating html elements.</li>
+    <li class="slide">Adds more code to insert a single element.</li>
+    <li class="slide">If not checked it can throw an error if "parentElement" does not exist when appending.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_2.js"></code></pre>
+  <ul>
+    <li class="slide">You can chain actions together in a single call.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_2.js" data-highlight="1:appendTo"></code></pre>
+  <ul>
+    <li>You can chain actions together in a single call.</li>
+    <li>A lot of methods can be substituted depending on where/how you want the node inserted.</li>
+    <li class="slide">If parent node does not exist jQuery will just ignore the request, no errors.</li>
+    <li class="slide"><strong>Note:</strong> Make sure you write the tag in &lt; &amp; &gt; brackets or jQuery will try and search for those elements instead of create them.</li>
+  </ul>
+</section>
+<!-- /Creating HTML Elements -->
+
+<!-- Creating element with attributes object -->
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_3.js"></code></pre>
+  <ul>
+    <li>You can create elements with attributes just as easily.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_3.js" data-highlight='1:"(.*)"'></code></pre>
+  <ul>
+    <li>You can create elements with attributes just as easily.</li>
+    <li>Passing a link tag as the first argument.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <h4>Creating HTML Elements</h4>
+  <pre><code src="../../code/ways-to-use-jquery_2_3.js" data-highlight='1:\{,2.3.4:("(.*)|href|target|\})'></code></pre>
+  <ul>
+    <li>You can create elements with attributes just as easily.</li>
+    <li>Passing a link tag as the first argument.</li>
+    <li>Then pass an object with valid attribute name/value pairs as the second argument.</li>
+  </ul>
+</section>
+<!-- /Creating element with attributes object -->
+
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <ul>
+    <li>
+      <p>Passing an HTML/jQuery object in 2nd argument to specify context of search</p>
+      <pre><code src="../../code/ways-to-use-jquery_3.js"></code></pre>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <ul>
+    <li>
+      <p>Passing an HTML/jQuery object in 2nd argument to specify context of search</p>
+      <pre><code src="../../code/ways-to-use-jquery_3.js" data-highlight="1.2:context"></code></pre>
+    </li>
+    <li>By default jQuery searches from the top of the document.</li>
+    <li class="slide">It will accept an HTML Object not created by jQuery, getElementById.</li>
+    <li class="slide">This way is good to use when writing plugins.</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <ul>
+    <li>
+      <p>Default Context - $(&quot;.someClass&quot;);</p>
+      <pre><code src="../../code/ways-to-use-jquery.txt" data-highlight="1.2.3.4.5:*"></code></pre>
+    </li>
+    <li class="slide">
+      <p>Defined Context - $(&quot;.someClass&quot;, context);</p>
+      <pre><code src="../../code/ways-to-use-jquery.txt" data-highlight="3:*"></code></pre>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <ul>
+    <li>
+      <p>Passing CSS &amp; X-Path Like selectors</p>
+      <pre><code src="../../code/ways-to-use-jquery_4.js" data-highlight="1.2.3:(#|\.)"></code></pre>
+    </li>
+    <li class="slide">Performance varies depending on how you use.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Ways to use jQuery</h2>
+  <ul>
+    <li>
+      <p>Passing CSS &amp; X-Path Like selectors</p>
+      <pre><code src="../../code/ways-to-use-jquery_4.js" data-highlight="1.2.3:(#|\.|body|div|p)"></code></pre>
+    </li>
+    <li>Performance varies depending on how you use.</li>
+    <li>jQuery has traversal methods that might be better in certain situations.</li>
+  </ul>
+</section>
+
+<!-------------------------
+SizzleJS
+--------------------------->
+
+<section class="slide">
+  <h2 class="center">SizzleJS</h2>
+  <p class="slide">An open source, standalone, pure-JavaScript CSS selector engine.</p>
+  <p class='slide'>Packaged with jQuery since version 1.3.</p>
+  <p class='slide'>CSS3 selector support, full unicode support and matching of regular expressions.</p>
+
+  <div class="slide">
+    <p>If you've hacked a project using jQuery then you should be familiar with sizzle</p>
+  </div>
+
+  <div class="slide">
+    <h5 class="space40 center">jQuery Syntax</h5>
+
+    <p class='center'>
+      <code>
+        jQuery(String selector, DOMElement|DOMDocument context)
+      </code>
+    </p>
+  </div>
+  <div class="slide">
+    <h5 class='space40 center'>Standalone Sizzle Syntax</h5>
+
+    <p class='center'>
+      <code>
+        Sizzle(String selector, DOMElement|DOMDocument context, Array results)
+      </code>
+    </p>
+  </div>
+</section>
+
+<section class="slide">
+  <h2 class="center">jQuery Selectors</h2>
+
+  <p class="slide">jQuery allows you to use CSS selector syntax to find DOM elements on a page,
+    <span class="slide">which uses the native browser API methods to retrieve the DOM collections found.</span>
+
+  <p class="slide">These native methods have improved over the years, but only the newer browsers
+                   support methods such as:
+  <ul>
+    <li class="slide">getElementsByClassName</li>
+    <li class="slide">querySelector</li>
+    <li class="slide">querySelectorAll</li>
+  </ul>
+  </p>
+  <p class="slide"> In some scenarios on older browsers, Sizzle must traverse the entire DOM until it finds the matching
+                    elements, which could have painful speed implications.</p>
+
+  <h3 class="slide center">
+    Remember, The slowest thing you can do in JavaScript is interact with the DOM.
+  </h3>
+</section>
+
+<section class="slide">
+  <h3 class="center" style="margin-top:30%">Happy Selector Engine === Happy Browser</h3>
+</section>
+
+<section class="slide">
+  <h3 class="center">A Few Tips to Keeping The Selector Engine Happy</h3>
+  <ul>
+    <li class="slide">
+      Use Unique ID's if you can. Classname lookups can be expensive.
+    </li>
+    <li class="slide">
+      Optimize for Sizzle's 'Right To Left' Model
+      <p>
+        <span class="slide">Sizzle Parses Right To Left. Taking the Right Most Selector And Checking It's Ancestors traversing Up the DOM.</span>
+        <span class="slide">With the exception that an ID is the first selector, The ID will be used as the context.</span><br/><br/>
+        <code class="slide">$("div.element .class") <--- Less Specific Matching</code><br/>
+        <code class="slide">$(".element span.class") <--- More Specific Matching</code>
+      </p>
+    </li>
+    <li class="slide">
+      Keep the selectors <em>Simple</em>.
+    </li>
+    <li class="slide">
+      Use The Context as much as you can. This allows jQuery to execute on smaller collections within the
+      'context', which can save a ton of Dom traversal time.
+      <p class="slide">When using a context, the internals of jQuery turn <em>jQuery(selector, context)</em> into <em>jQuery(context).find(selector)</em>.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Selector Performance</h1>
+</section>
+
+<section class="slide">
+  <h2 class="center">Performance Benchmarking</h2>
+
+  <p class="slide">"jsPerf aims to provide an easy way to create and share test cases, comparing the performance of
+                   different JavaScript snippets by running benchmarks." - jsPerf.com</p>
+  <br/>
+
+  <p class="slide">Allowing us to quickly compare different snippets of code in different browsers.</p>
+  <p class="slide">Selector performance can have a severe impact on your application.</p>
+
+  <div class="slide">
+    <h3 class="center">Selector Performance</h3>
+    <ol>
+      <li class="slide">Using Contexts<br/>
+        <a href="http://jsperf.com/jquery-selectors-context/2" target="_blank">http://jsperf.com/jquery-selectors-context/2</a>
+      </li>
+      <li class="slide">Remember Right To Left<br/>
+        <a href="http://jsperf.com/jquery-selector-perf-right-to-left/69">http://jsperf.com/jquery-selector-perf-right-to-left/69</a>
+      </li>
+      <li class="slide">Caching<br/>
+        <a href="http://jsperf.com/caching-selectors/3">http://jsperf.com/caching-selectors/3</a>
+      </li>
+    </ol>
+  </div>
+
+</section>
+
+
+<section class="slide">
+  <h3>How to use JSPerf</h3>
+  <p class="slide">Before showing you some performance benchmarks, let me show you how to create them.</p>
+  <p class="slide">Creating a jsPerf Benchmark Test - Go to <a href="http://jsperf.com ">http://jsperf.com</a></p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro1.png'/>
+  <p class="slide">I will be creating a Native vs. jQuery test case</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro2.png'/>
+</section>
+
+<section class="slide">
+  <h3>Using JSPerf continued...</h3>
+  <p>This next step prepares the test case. The "Setup" and "TearDown"</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro3.png'/>
+</section>
+
+<section class="slide">
+  <h3>Using JSPerf continued...</h3>
+  <p>Building the actual test cases</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro4.png'/>
+</section>
+
+<section class="slide">
+  <h3>Using JSPerf continued...</h3>
+  <p>The Final Test. Now you're ready to start benchmarking</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro5.png'/>
+</section>
+
+<section class="slide">
+  <h3>The Results</h3>
+  <p>Test results... After running the test you will get the results. These results are given in Ops/sec (executions per second).</p>
+  <p class="slide">"A test is repeatedly executed until it reaches the minimum time needed to get a percentage uncertainty for the measurement of less than or equal to 1%.
+                   The number of iterations will vary depending on the resolution of the environment's timer and how many times a test can execute in the minimum run time." - "John-David Dalton (jsPerf contributor)"</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-intro6.png'/>
+  <h2 class="slide center">Remember, Native is fast.</h2>
+</section>
+
+
+<section class="slide">
+  <h3>Using Contexts - ( http://bit.ly/qHs3Qk )</h3>
+
+  <p>Using the current version of jQuery we want the <em>Fastest</em> way to grab elements from the DOM. We set a jQuery
+     Object context to be passed into the test cases - $parent.</p>
+  <pre class='medium'><code src='../../code/jquery-contextTest.js' data-highlight="7.16:*"></code></pre>
+</section>
+
+<section class="slide">
+  <h3>Using Contexts - ( http://bit.ly/qHs3Qk )</h3>
+
+  <p>In most cases .find() will prevail. Once you get into larger Dom trees with deeper nesting, helper functions such
+     as .children() come into play.</p>
+  <img src='../../img/workshop/2/jsperf-context.png'/>
+</section>
+
+<section class="slide">
+  <h3>Think Right To Left - ( http://bit.ly/Ix01Bf )</h3>
+
+  <p>The Sizzle Selector Engine evaluates the Dom elements Right To Left. Here, i've set up a basic test case with a few
+     different approaches.</p>
+  <pre class='medium'><code src='../../code/jquery-rightToLeft.js'></code></pre>
+</section>
+
+<section class="slide">
+  <h3>Think Right To Left - ( http://bit.ly/Ix01Bf )</h3>
+
+  <p>Here is a simple test case highlighting right to left thinking when selecting elements actually yields more
+     Ops/sec.</p>
+  <img src='../../img/workshop/2/jsperf-rtl.png'/>
+</section>
+
+<section class="slide">
+  <h3 class="center">Caching your selectors ( http://bit.ly/K4R40X )</h3>
+  <p class="">A good practice to follow is to <strong>cache</strong> your selectors.</p>
+  <p class="slide">Just Remember that Every <strong>$('selector')</strong> call has to traverse the entire DOM each time, regardless of whether or not that specific query has been run previously. </p>
+  <p class="slide">All you have to do is var el = $('selector');<br/>
+                   Now you can reuse <em>el</em> over and over without hitting the Dom.</p>
+  <img class="slide" src='../../img/workshop/2/jsperf-caching.png'/>
+</section>
+
+<section class="slide">
+  <h3 class="center"><em>Asynchronous</em> JavaScript and XML. (Ajax)</h3>
+  <br/>
+  <p class="slide"> Ajax is the main solution for most dynamic sites on the web today leveraging the XMLHttpRequest(XHR) object.</p>
+  <p class="slide">XHR is an API that can be used by JavaScript and other browser scripting languages to transmit data to and from a web server using HTTP with out refreshing the page.</p>
+  <p class="slide">Although XHR has been around for over a decade,</p>
+  <p class="slide">If you have to support <strike>Internet Explorer</strike> < 7, Microsoft did not define the XMLHttpRequest object identifier in their scripting languages.</p>
+  <img class="slide" src='../../img/workshop/2/ieGlue.jpg'/>
+
+</section>
+
+<section class="slide">
+  <h3 class="center"><em>Asynchronous</em> JavaScript and XML Flow</h3>
+  <p class="slide" style="padding:0; margin:0">The Basic Control flow of an Ajax request is quite simple.</p>
+  <img class="slide" src='../../img/workshop/2/ajax-request.png'/>
+  <ul style="padding:0px; margin-top:0px;">
+    <li class="slide">The User Gets on the Application which, in turn, requires data from the server.</li>
+    <li class="slide">The Application requests this data via The XHR Object</li>
+    <li class="slide">The Server Looks up that data from its data store and then returns the response</li>
+    <li class="slide">The Client Then fires the response callback appropriate to the server response</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h3 class="center">Ajax Requests without jQuery</h3>
+  <span class="slide">Before jQuery was around making an ajax request was very verbose, you have to handle the states and hack together your own implementation of the XMLHttpRequest Object.</span>
+  <pre class='medium min slide'><code src='../../code/jquery-ajaxRequestOld.js' data-highlight="3.5.7:*"></code></pre>
+</section>
+
+<section class="slide">
+  <h3 class="center">Ajax Requests without jQuery</h3>
+  <span>Before jQuery was around making an ajax request was very verbose, you have to handle the states and hack together your own implementation of the XMLHttpRequest Object.</span>
+  <pre class='medium min'><code src='../../code/jquery-ajaxRequestOld.js' data-highlight="16.17.18.24:*"></code></pre>
+</section>
+
+
+<section class="slide">
+  <h2 class="center" style="margin-top:20%">Now lets see how <br/><em>jQuery</em> handles this</h2>
+</section>
+
+
+<section class="slide">
+  <h3 class="center">$.ajax()</h3>
+  <span class="slide">jQuery <em>helps</em> standardize cross browser issues so the developer doesn't have to worry about them.</span>
+  <span class="slide">Traditionally you would have different object constructors for different browsers when creating a XHR request.</span>
+  <div class="slide">
+    <br/>
+    Here is a straight forward jQuery Ajax Request - $.ajax( url [, settings] );
+    <pre class='medium'><code src='../../code/jquery-ajaxRequest.js'></code></pre>
+  </div>
+  <p class="slide">jQuery's $.ajax method wraps all of the ajax properties into a clean easy to use api.</p>
+  <p class="slide">All the elements in the settings object are able to be overridden using $.ajaxSetup(). People override the ajax method for auth tokens or pre-defining request headers.</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">$.ajax() Callbacks</h3>
+  <p class="slide">What happens when we want to chain multiple Ajax requests together, collect the data and execute after the last one is complete?</p>
+  <p class="slide">The old way of handling this was to place the next ajax request in the complete or success handler passing the final callback along.</p>
+  <p class="slide">Many people rolled their own solutions but nothing really handled the cross browser portion elegantly.</p>
+  <p class="slide">This all changed in jQuery <em>1.5</em>. </p>
+  <p class="slide">The implementation of the <strong>Promises</strong> interface was introduced</p>
+  <p class="slide">jQuery refers to this as the <strong>Deferred Object</strong>.</p>
+  <p class="slide">This, in turn, enhanced the way callbacks are now <strong>handled</strong> and <strong>invoked</strong>.</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">What's A Promise?</h3>
+  <p class="slide">A <strong>promise</strong> provides "a well-defined interface for interacting with an object that represents the result of an action that is performed asynchronously, and may or may not be finished at any given point in time." - http://wiki.commonjs.org/wiki/Promises</p>
+  <p class="slide">In Layman's Terms:</p>
+  <ul>
+    <li class="slide">A Promise will allow asynchronous events to queue up. Firing the callbacks when all requests have completed.</li>
+    <li class="slide">Its an object that represents a <strong>one-time</strong> event.</li>
+    <li class="slide">It starts in <em>Pending</em> State - newer versions of jQuery have state lookups isRejected() and isResolved().</li>
+    <li class="slide">A Promise is either <strong>resolved</strong> or <strong>rejected</strong>.</li>
+    <li class="slide">Once resolved or rejected its callbacks are fired once Leaving it in the current <strong>state</strong>.</li>
+    <li class="slide">Although, You can add <strong>new callbacks</strong> even after it has been resolved or rejected which will fire right away.</li>
+  </ul>
+  <br/>
+  <p class="slide center">Okay enough overview, lets get into jQuery's Promise implementation.</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">The Deferred Object</h3>
+  <p class="slide">$.Deferred() - "a chainable utility object that can register multiple callbacks into callback queues, invoke callback queues, and relay the success or failure state of any synchronous or asynchronous function" - api.jquery.com</p>
+  <p class="slide">The deferred concept is built into $.ajax(), you inherently get all of its awesomeness.</p>
+
+  <p class="slide">A Small preview... Lets say we want to call a render function after several concurrent AJAX requests have completed. We may now achieve this like so:</p>
+  <pre class='medium slide'><code src='../../code/jquery-deferredConcurrent.js'></code></pre>
+  <p class="slide">Okay, now lets introduce you fully to the deferred methods and syntax.</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">$.Deferred Usage</h3>
+
+  <h5 class="slide">$.when()</h5>
+  <p class="slide">Provides a way to execute callback functions based on one or more objects, usually Deferred objects representing asynchronous events.</p>
+
+  <h5 class="slide">deferred.then( doneCallbacks, failCallbacks )</h5>
+  <p class="slide">This method only takes a single done and a single fail callback. Called when the Deferred object is resolved or rejected.</p>
+
+  <h5 class="slide">deferred.done( doneCallbacks [, doneCallbacks] )</h5>
+  <p class="slide">This method takes any number of done callbacks. Called when the Deferred object is resolved.</p>
+
+  <h5 class="slide">deferred.fail( failCallbacks [, failCallbacks] )</h5>
+  <p class="slide">This method takes any number of fail callbacks. Called when the Deferred object is rejected. Referred to as .error in jQuery < 1.6</p>
+
+  <h5 class="slide">deferred.always( alwaysCallbacks [, alwaysCallbacks] )</h5>
+  <p class="slide">This method takes any number of always callbacks. Called when the Deferred object is either resolved or rejected. Referred to as .complete in jQuery < 1.6</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">Basic Usage With jQuery Animate Method</h3>
+  <p class="slide">The promise object is chainable to lots of jQuery methods such as .animate() .slideToggle() .fadeOut().</p>
+  <p class="slide">
+    <span id="ball"></span>
+    <textarea id="ballCode" name="code" class="code" mode="javascript" style="display: none;" globals="$" runnable="true">
+      $.when($("#ball").fadeIn("fast")
+      .animate({ left: "975px" }, 1500)
+      .animate({ left: "30px"}, 1500)
+      ).done(function() {
+      $(this).hide();
+      console.log("Finished Chained Animations");
+      });
+    </textarea>
+  </p>
+
+  <p class="slide">
+    <span id="ball"></span>
+    <textarea id="ballCodeAlt" name="code" class="code" mode="javascript" style="display: none;" globals="$" runnable="true">
+      var deferred = $.Deferred();
+      deferred.done(function() {
+        $(this).hide();
+        console.log("Finished Chained Animations");
+      });
+      $("#ball").fadeIn("fast", function(){
+        $(this).animate({ left: "975px" }, 1500)
+        .animate({ left: "30px"}, 1500, 'linear', function() {
+          deferred.resolve();
+        });
+      });
+    </textarea>
+  </p>
+</section>
+
+<section class="slide">
+  <h3 class="center">$.Deferred.pipe()</h3>
+  <h5 class="slide"> deferred.pipe( [doneFilter] [, failFilter] )</h5>
+  <p class="slide">"The deferred.pipe() method returns a new promise that filters the status and values of a deferred through a function. The doneFilter and failFilter functions filter the original deferred's resolved / rejected status and values"-api.jquery.net</p>
+  <p class="slide">So Basically, Each call to deferred.pipe() method either passes on the response or returns a <strong>XHR Promise</strong> for the next pipe chain.</p>
+  <p class="slide">This allows our asynchronous requests to be performed in <strong>serial</strong></p>
+  <p class="slide">In jQuery 1.7 - the method <strong>deferred.state()</strong> was added to check the state of the deferred object at any time</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">Deferreds can be used for much more than just .ajax()</h3>
+  <p class="slide" style="margin-bottom:5px;">You can use a deferred without first calling $.when as shown in the previous slide, just by returning the deferred's promise object.
+  <span class="slide">  This is the essential part of deferred, <strong>.promise()</strong></span>
+  <div class="slide">
+    <textarea id="loginCode" name="code" class="code" mode="javascript" style="display: none;" globals="$" runnable="true">
+      function login() {
+        var loginForm = $("login-form"),
+        deferred = new $.Deferred(), // Deferred
+        getAccess = deferred.pipe(function () {
+          return $.post("/path/to/api/login", loginForm);
+      });
+
+      getAccess.done(function(access) {
+       //Log User In With Access
+      });
+
+      if (isValidLogin(loginForm)) {
+        deferred.resolve();
+      } else { deferred.reject(); } //Reject the deferred .fail()
+        return deferred.promise(); //Returns the promise Object
+      }
+
+      //Validate And Return Boolean
+      function isValidLogin() {return true;}
+      function loginSuccess() {console.log("Success");}
+      function loginFail() {console.log("Failure");}
+      //@Usage
+      login().done(loginSuccess).fail(loginFail);
+    </textarea>
+  </div>
+</section>
+
+<section class="slide">
+  <h3 class="center">Deferred Wrap Up!</h3>
+  <p class="slide">We've learned that:</p>
+  <ul>
+    <li class="slide">Deferreds offer a new way to writing asynchronous (and synchronous) calls.</li>
+    <li class="slide"> We let the deferred objects manage our callbacks, even for the future.</li>
+    <li class="slide"> We can easily resolve or reject a deferred, thus passing the data to the callbacks.</li>
+    <li class="slide">We are no longer limited to just one success, error, or complete callback anymore.</li>
+    <li class="slide">Instead of simple callback functions, these hooks are now self-managed in a FIFO Callback Queue.</li>
+  </ul>
+  <h3 class="slide center">Now What?</h3>
+  <h3 class="slide center">How do we handle Events associated with the DOM?</h3>
+</section>
+
+<!--------------------------------
+Event Bubbling / Plugin Authoring
+--------------------------------->
+
+
+
+<section class="slide">
+  <h1>Event Handling</h1>
+</section>
+
+<section class="slide">
+  <h2>Event Handling</h2>
+  <ul>
+    <li class="slide">jQuery allows you to bind events to elements inside the DOM.</li>
+    <li class="slide">You can use one of jQuery's lower-level methods to attach events to elements.</li>
+    <li class="slide">Even when certain browsers don't naturally support events jQuery provides work arounds for them automatically.</li>
+    <li class="slide">You can delegate events to DOM elements that do not exist yet.</li>
+    <li class="slide">You can create your own custom events.</li>
+    <li class="slide">jQuery offers a method to artificially trigger an event for any object.</li>
+  </ul>
+</section>
+
+<!-- Life before 1.7 -->
+<section class="slide">
+  <h2 style="margin-top: 20%;" class="center">Life before version 1.7</h2>
+</section>
+<section class="slide">
+  <h2>Life before version 1.7</h2>
+  <h3 style="margin-top: 10%;" class="center">You should consider the following deprecated/obsolete. There are better methods for handling events.</h3>
+</section>
+<section class="slide">
+  <h2>Life before version 1.7</h2>
+  <h3 style="margin-top: 10%;" class="center">Then why are you teaching me this?</h3>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Life before version 1.7</h4>
+  <ul>
+    <li class="slide">A lot of code still exists that use these old methods.</li>
+    <li class="slide">Some of these methods are still valid just not as efficient.</li>
+    <li class="slide">Knowing how these methods work makes it easy to convert them to newer techniques.</li>
+  </ul>
+</section>
+<!-- /Life before 1.7 -->
+
+
+<!-- Bind Methods -->
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <ul>
+    <li class="slide">Low-level function for attaching events.</li>
+    <li class="slide">Helper functions call this method to set events.</li>
+    <li class="slide">Multiple events can bet set at once.</li>
+    <li class="slide">Events can be unbound from object.</li>
+    <li class="slide">Only works on elements that already exist in the DOM.</li>
+    <li class="slide">You would normally call this inside a jQuery ready function</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js" data-highlight="1.3.5.7:\#element"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js" data-highlight="1.3.5.7:click"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js" data-highlight="3:(click|custom)"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js" data-highlight="3:custom,7:*"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Bind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_1.js" data-highlight="5:click.namedSpace"></code></pre>
+</section>
+<!-- /Bind Methods -->
+
+<!-- Unbind Methods -->
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <ul>
+    <li class="slide">jQuery provides a method called unbind which allows you to un-attach event handlers from elements.</li>
+    <li class="slide">Works with all shortcut, bind, live methods and can un-attach custom events.</li>
+    <li class="slide">It can unbind named spaces and events so only certain events can be ended while others are still observed.*</li>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2.js" data-highlight="1:*"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2.js" data-highlight="3:*"></code></pre>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2.js" data-highlight="1:function\(\) \{\}"></code></pre>
+  <ul>
+    <li class="slide">Unbind can sometimes have unwanted effects if other events are attached to the same element.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2.js" data-highlight="3:mouseover"></code></pre>
+  <ul>
+    <li>Unbind can sometimes have unwanted effects if other events are attached to the same element.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <h2 class="center">Doesn't unbind offer a callback method? Can't I just use that to pass another function when unbinding a single event?</h2>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <h1 class="center">Yes and Yes*</h1>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2_2.js" data-highlight="2.3.4:*"></code></pre>
+  <ul>
+    <li class="slide">Naming the handler will ensure that no other scripts are removed.</li>
+</section>
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Unbind Method (&lt; 1.7)</h4>
+  <pre><code src="../../code/events_2_2.js" data-highlight="6.7.8:*"></code></pre>
+  <ul>
+    <li class="slide">Passing anonymous handlers will not work.</li>
+    <li class="slide">Even though two anonymous handlers are identical JavaScript can and will treat them as separate entities so it is best to pass a named handler.</li>
+</section>
+<!-- /Unbind Method -->
+
+<!-- Live Bind Method -->
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>Live Method (&lt; 1.7)</h4>
+  <ul>
+    <li class="slide">jQuery provides a method called "live" which allows you to bind events to all existing and future DOM objects.</li>
+    <li class="slide">Not all events are available using the live bind method.</li>
+    <li class="slide">Live isn't very efficient at managing events.</li>
+  </ul>
+</section>
+<!-- /Live Bind Method -->
+
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">That's cool, but how does it work?!</h2>
+</section>
+
+<!-- But first -->
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">Direct vs. Delegated Events</h2>
+</section>
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">But First...</h2>
+</section>
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">Event Bubbling</h2>
+</section>
+<!-- /But first -->
+
+<!-- Event Bubbling -->
+<section class="slide">
+  <h2>Event Bubbling</h2>
+  <ul>
+    <li class="slide">DOM Elements are very lonely, very insecure things.</li>
+    <li class="slide">
+      <p>Once the DOM is loaded elements wait for user interaction before firing off an event.</p>
+      <img src="../../img/workshop/2/forever-alone.jpg" alt="forever alone" />
+    </li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Event Bubbling</h2>
+  <ul>
+    <li>Once fired all DOM element actions bubble outward and upward until it reaches the document root.</li>
+  </ul>
+  <img src="../../img/workshop/2/beer-bubble.jpg" style="height: 600px;" />
+</section>
+<section class="slide">
+  <h2>Event Bubbling</h2>
+  <ul>
+    <li class="slide">When a user clicks on a tightly nested element tree...</li>
+  </ul>
+  <div class="slide">
+    <h3 class="center">Who fired first?</h3>
+    <img src="http://scifisurplus.com/wp-content/uploads/2012/02/Greedo-then-Han.jpg" alt="who fired first?" />
+  </div>
+</section>
+<section class="slide">
+  <h2>Event Bubbling</h2>
+  <ul>
+    <li class="slide">Luckily early on in browser development several brilliant minds set out to give us an answer.</li>
+    <li class="slide">
+      <p>Unfortunately...</p>
+      <ul>
+        <li class="slide">One Group worked for Microsoft.</li>
+        <li class="slide">The other worked for Netscape.</li>
+      </ul>
+    </li>
+    <li class="slide">The W3C didn't want to take sides so it accepts both versions.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Event Bubbling</h2>
+  <h4>Who Fired First?</h4>
+  <ul>
+    <li class="slide">
+      <p>According to Microsoft</p>
+      <ul>
+        <li class="slide">Since the action has to go through parent elements then parent elements should fire first.</li>
+      </ul>
+    </li>
+    <li class="slide">
+      <p>According to Netscape</p>
+      <ul>
+        <li class="slide">Following the event bubble model...</li>
+        <li class="slide">Since events flow outward and upward the inner most element should fire first.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!-- /Event Bubbling -->
+
+<!-- Direct vs. Delegated Events -->
+<section class="slide">
+  <h2>Direct vs. Delegated Events</h2>
+  <ul>
+    <li class="slide">
+      <p>Direct Events</p>
+      <ul>
+        <li class="slide">Element events are directly registered.</li>
+        <li class="slide">All elements must exist before direct event is attached.</li>
+      </ul>
+    </li>
+    <li class="slide">
+      <p>Delegated Events</p>
+      <ul>
+        <li class="slide">Elements are registered but events from descendants are also monitored.</li>
+        <li class="slide">Child events are captured as the bubble up to the parent that is being monitored.</li>
+        <li class="slide">It's important to have the parent element as close to the child as possible.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Direct vs. Delegated Events</h2>
+  <ul>
+    <li class="slide">
+      <p>Direct Events</p>
+      <pre><code src="../../code/directvdelegated_1.js"></code></pre>
+    </li>
+    <li class="slide">
+      <p>Delegated Events</p>
+			<pre><code src="../../code/directvdelegated_2.js"></code><pre>
+    </li>
+  </ul>
+</section>
+<!-- /Direct vs. Delegated -->
+
+<!-- on() off() -->
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">And now for the future...</h2>
+</section>
+<section class="slide">
+  <h2 class="center" style="margin-top: 20%;">On() &amp; Off()</h2>
+</section>
+<!-- /on() off() -->
+
+<!-- the future -->
+<section class="slide">
+  <h2>Event Handling</h2>
+  <h4>on() and off()</h4>
+  <ul>
+    <li class="slide">as of 1.71 jQuery has merged delegate and live events into one function</li>
+    <li class="slide">the "off" method works just as unbind.</li>
+    <li class="slide">This method is much more efficient than both delegate and live.</li>
+    <li class="slide">if you continue to use live &amp; delegate after 1.71 they both use on behind the scenes.</li>
+</section>
+<!-- /the future -->
+
+<section class="slide">
+  <h2>Events</h2>
+  <h4>Final Thoughts</h4>
+  <ul>
+    <li class="slide">Be aware of the types of events you are going to capture.</li>
+    <li class="slide">Event delegation can be costly if not used properly.</li>
+    <li class="slide">If you REALLY want to use delegate...</li>
+    <li class="slide">just use "on".</li>
+  </ul>
+</section>
+
+<section class="slide">
+  <h1>Plugin Authoring</h1>
+</section>
+
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <ul>
+    <li>
+      <p>jQuery makes it easy to write plugins to extend its functionality, however:</p>
+      <ul>
+        <li class="slide">Plugins that are not written correctly can affect or be affected by other poorly written plugins.</li>
+        <li class="slide">Inefficient use of jQuery can slow down the performance of the application.</li>
+        <li class="slide">They can pollute the global namespace.</li>
+      </ul>
+  </ul>
+</section>
+
+<!-- Self-invoking function closures -->
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_1_1.js"></code></pre>
+  <ul>
+    <li class="slide">A self-invoking function is a standard function with a set of parentheses added to the end of it.</li>
+    <li class="slide">This creates a literal function but since it is not named the value is never stored.</li>
+    <li class="slide">The parentheses at the end tells the function to execute just as if you were calling a traditional function.</li>
+    <li class="slide">Once the function terminates the local variables are discarded and the Global namespace will remain unchanged*</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_1_1.js"></code></pre>
+  <ul>
+    <li>With the oddness of this pattern it is possible for developers to mistake this pattern for an actual function.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_1_2.js" data-highlight="1:\(,3:\)"></code></pre>
+  <ul>
+    <li>With the oddness of this pattern it is possible for developers to mistake this pattern for an actual function.</li>
+    <li>To overcome this we wrap the function inside parentheses.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_2.js"></code></pre>
+  <ul>
+    <li>To further help us making a good plugin we can pass it arguments to be used locally.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_2.js" data-highlight="1:\$"></code></pre>
+  <ul>
+    <li>To further help us create a good plugin we can pass it arguments to be used locally.</li>
+    <li>We set a local dollar-sign argument in our function.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Self-invoking function closures</h4>
+  <pre><code src="../../code/plugin-authoring_2.js" data-highlight="5:jQuery"></code></pre>
+  <ul>
+    <li>To further help us create a good plugin we can pass it arguments to be used locally.</li>
+    <li>We set a local dollar-sign argument in our function.</li>
+    <li>We pass the base jQuery function in case someone has called the jQuery.noConflict() method and $ no longer belongs to jQuery.</li>
+  </ul>
+</section>
+<!-- /Self-invoking function closures -->
+
+
+<!-- jQuery Object Reference -->
+<slide class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Object Referencing</h4>
+  <pre><code src="../../code/plugin-authoring_2_1.js"></code></pre>
+</slide>
+<slide class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Object Referencing</h4>
+  <pre><code src="../../code/plugin-authoring_2_1.js" data-highlight="3:this,7:*"></code></pre>
+  <ul>
+    <li class="slide">When a jQuery plugin is invoked on an object the "this" keyword references the object wrapped in jQuery.</li>
+    <li class="slide">It can be confusing because other jQuery functions that provides callbacks "this" refers to the native DOM element.</li>
+  </ul>
+</slide>
+<!-- /jQuery Object Reference -->
+
+
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_3_1.js"></code></pre>
+</section>
+
+<!-- Don't pollute global namespace! -->
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_3_1.js" data-highlight="4:updateEl,5:intervalTime,13:updateObject,14:addPollDecay"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Don't pollute the global namespace!</h4>
+  <img src="../../img/workshop/2/captain-planet.jpg" alt="Captain Planet" />
+  <ul>
+    <li class="slide">Anything that exists in the global namespace should be considered unreliable.</li>
+    <li class="slide">Every script has full access to variables in the global namespace.</li>
+    <li class="slide">Remember variable scope is your friend.</li>
+  </ul>
+</section>
+<!-- /Don't pollute global namespace -->
+
+<!-- It's not extendable -->
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_3_2.js"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_3_2.js" data-highlight="3:(url|interval|decay)"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>It's not extendable!</h4>
+  <ul>
+    <li class="slide">jQuery has a extend function that lets you set plugin defaults.</li>
+    <li class="slide">It takes a target and updates/adds to it based on objects passed to it.</li>
+  </ul>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="1:settings = \{,2.3.4:*,5:\}"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="6:options = \{,7.8:*,9:\}"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="11:extend"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="11:(options|settings)"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="14:(url|x|/|false)"></code></pre>
+</section>
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <pre><code src="../../code/plugin-authoring_4.js" data-highlight="14:(interval|decay|5000|2)"></code></pre>
+</section>
+<section class="slide">
+  <pre><code src="../../code/plugin-authoring_3_3.js"></code></pre>
+</section>
+<!-- /It's not extendable -->
+
+<section class="slide">
+  <h2 style="margin-top: 20%;" class="center">That's cool but is it all you've got?</h2>
+</section>
+<section class="slide">
+  <h2 style="margin-top: 20%;" class="center">No...</h2>
+  <h2 class="center">|;-)</h2>
+</section>
+<section class="slide">
+  <h1>jQuery Plugin Patterns</h1>
+</section>
+<section class="slide">
+  <h2 style="margin-top: 20%;" class="center">:-&amp;</h2>
+</section>
+
+<!-- Intro to jQuery Plugin Patterns -->
+<section class="slide">
+  <h2>jQuery Plugin Patterns</h2>
+  <ul>
+    <li>A design pattern is a general reusable solution to a commonly occurring problem within a given context.</li>
+    <li class="slide">There are a lot of JavaScript design patterns but none really exist for jQuery Plugins.</li>
+    <li class="slide">Plugin development has evolved over the years and developers use code in many different ways.</li>
+    <li class="slide">We will be covering jQuery plugin patterns written by Addy Osmani.</li>
+    <li class="slide">Several patterns can be downloaded from: https://github.com/addyosmani/jquery-plugin-patterns</li>
+    <li class="slide">We'll be looking at a few patterns and breaking them apart to get a better understanding of what's going on.</li>
+  </ul>
+</section>
+<!-- /Intro to jQuery Plugin Patterns -->
+
+<!-- Basic Plugin Pattern -->
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="1:;"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="1:undefined"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="1:(window|document)"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="3:defaults = {,4:*,5:\};"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="6:function Plugin"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="8:*"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="8:\{\}"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="13.14:*,9.8.7:*"></code></pre>
+</section>
+<section class="slide">
+  <h4>Basic Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_1.js" data-highlight="15.16.17.18.19.20.21.22:*"></code></pre>
+</section>
+<!-- /Basic Plugin Pattern -->
+
+<!-- Best Options Plugin Pattern -->
+<section class="slide">
+  <h4>Best Options Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_2.js"></code></pre>
+</section>
+<section class="slide">
+  <h4>Best Options Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_2.js" data-highlight="5:\$.fn.pluginName.options"></code></pre>
+</section>
+<section class="slide">
+  <h4>Best Options Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_2.js" data-highlight="14.16.17.19.20:*"></code></pre>
+</section>
+<!-- /Best Options Plugin Pattern -->
+
+<!-- Extend Skeleton -->
+<section class="slide">
+  <h4>Extend Skeleton Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_3.js"></code></pre>
+</section>
+<section class="slide">
+  <h4>Extend Skeleton Plugin Pattern</h4>
+  <pre><code src="../../code/plugin-patterns_3.js" data-highlight="2:\$.fn.extend"></code></pre>
+</section>
+<!-- /Extend Skeleton -->
+
+<!-- Ending Plugins -->
+<section class="slide">
+  <h2>Plugin Authoring</h2>
+  <h4>Final Thoughts</h4>
+  <ul>
+    <li class="slide">Use of plugin patterns will help create solid code.</li>
+    <li class="slide">Avoid accessing the global namespace wherever possible.</li>
+    <li class="slide">Make your plugin options extendable. Provide defaults to your users.</li>
+    <li class="slide">
+      <p>Learn More:</p>
+      <ul>
+        <li class="slide">jQuery Authoring Guide.</li>
+        <li class="slide">Addy Osmani</li>
+        <li class="slide">John Resig</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+<!-- /Ending Plugins -->
+
+
+
+<!--------------------------------
+Conclusion
+--------------------------------->
+
+<section class="slide">
+  <h3 class="center" style="margin-top:30%">Conclusion...</h3>
+</section>
+
+<section class="slide">
+  <h3 class="center" style="margin-top:30%">We built something simple with <br/>Most of the topics presented tonight.</h3>
+</section>
+
+<section class="slide">
+  <h3 class="center">A Simple jQuery Twitter Poll</h3>
+  <p class="slide">Remember Addy Osmani's Plugin Pattern's</p>
+  <p class="slide">We Built our Plugin Based on <a href="https://github.com/addyosmani/jquery-plugin-patterns">jquery.highly-configurable.plugin.boilerplate.js</a></p>
+  <pre class='medium slide'><code src='../../code/jquery-pluginIntro.js' data-highlight='1.2.10.15:*'></code></pre>
+</section>
+
+<section class="slide">
+  <h3 class="center">A Simple jQuery Twitter Poll</h3>
+  <p class="slide">Now some of the Main Logic Is For Demo Purposes Only</p>
+  <p class="slide">It's your turn now.. Improve this plugin and make it better</p>
+  <pre class='medium slide'><code src='../../code/jquery-pluginLogic.js' data-highlight='3.8.10:*'></code></pre>
+  <p class="slide">Here we use an interval which is extensible, determining how often to run the callback, a simple poll implementation.</p>
+</section>
+
+<section class="slide">
+  <h3 class="center">A Simple jQuery Twitter Poll</h3>
+  <p class="slide">Here We construct the Twitter Search API URL and defer the result</p>
+  <pre class='medium slide' style="font-size:18px;"><code src='../../code/jquery-pluginLogic2.js' data-highlight='4.6:*'></code></pre>
+</section>
+
+<section class="slide">
+  <h3 class="center">A Simple jQuery Twitter Poll</h3>
+  <iframe id='invite_iframe' frameBorder='0' allowTransparency='true' style='visibility:hidden;' onload='this.style.visibility = "visible";' width='100%' height='100%' src='/code/plugins/jquery-tweets/index.html'></iframe>
+
+</section>
+
+<section class="slide">
+  <h3 class="center">Some Useful links covering the topics discussed tonight...</h3>
+
+  <p class="slide">
+    <ol>
+      <li class="slide">You've got to start with jQuery API Docs
+        <a href="http://docs.jquery.com/" target="_blank">http://docs.jquery.com</a>
+      </li>
+      <li class="slide">https://github.com/addyosmani/jquery-plugin-patterns
+        <a href="https://github.com/addyosmani/jquery-plugin-patterns" target="_blank">https://github.com/addyosmani/jquery-plugin-patterns</a>
+      </li>
+      <li class="slide">Use Firebug's console logging greatness
+        <a href="http://getfirebug.com/wiki/index.php/Console_API" target="_blank">http://getfirebug.com/wiki/index.php/Console_API</a>
+      </li>
+      <li class="slide">Use the Firebug Profiler.<br/>
+        <a href="http://getfirebug.com/javascript" target="_blank">http://getfirebug.com/javascript</a>
+      </li>
+      <li class="slide">JSLitmus - create ad-hoc Javascript Benchmark tests.
+        <a href="http://www.broofa.com/Tools/JSLitmus/" target="_blank">http://www.broofa.com/Tools/JSLitmus/</a>
+      </li>
+    </ol>
+  </p>
+
+</section>
+
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+<!-- ---------------------------------------------------------- -->
+
+<script src="../../scripts/jquery-1.7.min.js"></script>
+<script src="../../scripts/deck.js/deck.core.js"></script>
+
+<script src="../../scripts/extensions/hash/deck.hash.js"></script>
+<script src="../../scripts/extensions/menu/deck.menu.js"></script>
+<script src="../../scripts/extensions/status/deck.status.js"></script>
+<script src="../../scripts/extensions/navigation/deck.navigation.js"></script>
+
+<link rel="stylesheet" href="../../scripts/extensions/codemirror/deck.codemirror.css">
+<link rel="stylesheet" href="../../scripts/extensions/codemirror/themes/default.css">
+
+<!-- Base codemiror code -->
+<script src="../../scripts/extensions/codemirror/codemirror.js"></script>
+<!-- javascript -->
+<script src="../../scripts/extensions/codemirror/mode/javascript/javascript.js"></script>
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="../../scripts/extensions/codemirror/mode/xml/xml.js"></script>
+<script src="../../scripts/extensions/codemirror/mode/css/css.js"></script>
+<script src="../../scripts/extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<!-- Plugin code -->
+<script src="../../scripts/extensions/codemirror/deck.codemirror.js"></script>
+<script src="../../scripts/deck.init.js"></script>
+
+</body>
+</html>

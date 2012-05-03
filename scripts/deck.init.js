@@ -1,61 +1,110 @@
-$(function() {
-  $.deck('.slide');
-  $('code[src]').each(function(i,el){
-    el = $(el);
-    $.ajax({
-      url : el.attr('src'),
-      dataType: 'text'
-    }).then(function(text) {
-      if (el.data('highlight')) {
-        var spec = getHighlightSpec(el.data('highlight'));
-        var lines = text.split("\n");
-        for (var i = 0; i < lines.length; i++) {
-          if (!spec[i]) continue;
-          for (var j = 0; j < spec[i].length; j++) {
-            var re = new RegExp('');
-            if (spec[i][j] === '*') {
-              re = new RegExp('(.*)$');
-            } else {
-              re = new RegExp('(' + spec[i][j] + ')','g');
-            }
-            lines[i-1] = lines[i-1].replace(re,'<span class="highlight">$1</span>')
-          }
-        }
-        text = lines.join("\n");
-        for (i = 0; i < spec.global.length; i++) {
-          var re = new RegExp('(' + spec.global[i] + ')','g');
-          text = text.replace(re,"<span class='highlight'>$1</span>")
-        }
-      }
-      el.html(text)
-    }).fail(function(){
-      el.html("There was an error loading:" + el.attr('src'))
-    });
-  })
-});
+/*
+* Don't read too much of this yet, it's ugly.
+*
+* We're hacking around trying to find the best
+* fit for how we do slides. We'll formalize and
+* open source everything when we can.
+*
+* */
+var params = {
+  cache : null,
+  get : function get(name) {
+    if (!this.cache) this.parse();
+    return this.cache[name];
+  },
+  parse : function parse(string) {
+    string = string || window.location.search;
+    if (string.substring(0,1) === '?') string = string.substring(1);
+    string = string.replace(/\+/,' ');
 
-function getHighlightSpec(string) {
-  var spec = {global : []},
-      pieces = string.split(',');
+    var regex = /([^&;=]+)=?([^&;]*)/g;
 
-  for (var i = 0; i < pieces.length; i++) {
-    var specPiece = pieces[i],
-      piecesSpec = specPiece.split(':'),
-      toHighlight = piecesSpec.pop(),
-      lines = piecesSpec.pop();
+    var match,params = {};
 
-    if (lines) {
-      console.log(lines)
-      lines = lines.split('.');
-      console.log(lines)
-      for (var j = 0; j < lines.length; j++) {
-        var line = lines[j];
-        console.log(line)
-        spec[line] ? spec[line].push(toHighlight) : spec[line] = [toHighlight];
-      }
-    } else {
-      spec.global.push(toHighlight);
+    while (match = regex.exec(string)) {
+      var name  = decodeURIComponent(match[1]),
+        value = decodeURIComponent(match[2]);
+      params[name] = params[name] === undefined ? value : (params[name] instanceof Array ? params[name].push(value) : params[name] = [params[name],value]);
+    }
+    return this.cache = params;
+  }
+};
+
+function MarkdownFilter(decks) {
+  var converter = new Markdown.Converter(),buffer = '';
+  for (var i = 0; i < decks.length; i++) {
+    var slides = decks[i].split(/\s*---\s*/mg);
+    for (var j = 0; j < slides.length; j++) {
+      if (slides[j].match(/^\s*$/)) continue;
+      buffer += '<section class="slide">' + converter.makeHtml(slides[j]) + '</section>';
     }
   }
-  return spec;
+  return buffer;
 }
+
+$(function(){
+  if (params.get('dev')) $('.deck-container').addClass('dev');
+
+  $('.deck-container').loadDeck({
+    deckDir : params.get('deckDir') || './decks/',
+    cssDir  : params.get('cssDir')  || './css/',
+    theme   : params.get('theme')   || 'javascriptU',
+    ext     : params.get('ext') || '.md',
+    decks   : params.get('decks')   || '',
+    intro   : params.get('intro')   || true,
+    title   : params.get('title'),
+    filter  : MarkdownFilter
+  }).done(function(){
+    highlightInit().then(function(){
+      setupSocial();
+      deck_CodeMirror();
+      $.deck('.slide');
+    });
+  });
+});
+
+
+function highlightInit() {
+  var baseDir = './code/';
+  var deferred = $.Deferred();
+  var requests = [];
+  var numComplete = 0;
+  $('code[src]').each(function(i,el){
+    requests.push($.ajax({
+      url : baseDir + $(el).attr('src'),
+      context : $(el),
+      dataType: 'text'
+    }).then(addSource).fail(retrieveFail).always(handleDeferred));
+  });
+
+  if (!requests.length) deferred.resolve();
+
+  return deferred;
+
+  function handleDeferred() { if (++numComplete >= requests.length) deferred.resolve(); }
+  function addSource(text)  { this.html(text) }
+  function retrieveFail()   { this.html("There was an error loading:" + this.attr('src')) }
+}
+
+function setupSocial() {
+  $('#shareme').sharrre({
+    share: {
+      googlePlus: true,
+      facebook: true,
+      twitter: true,
+      digg: true,
+      linkedin: true
+    },
+    buttons: {
+      googlePlus: {size: 'tall'},
+      facebook: {layout: 'box_count'},
+      twitter: {count: 'vertical'},
+      digg: {type: 'DiggMedium'},
+      linkedin: {counter: 'top'}
+    },
+    enableHover: false,
+    enableCounter: false,
+    enableTracking: true
+  });
+}
+
