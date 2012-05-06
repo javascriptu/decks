@@ -59,7 +59,7 @@ function deck_CodeMirror() {
     // Seek out and cache all hidden scripts
     $("script[type=codemirror]").each(function() {
       hiddenScripts.push({
-        selector: $(this).data("selector"),
+        selector: $(this).data("selector") || $(this).next('pre').children('code'),
         src: this.innerHTML
       });
     });
