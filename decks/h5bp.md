@@ -1,7 +1,7 @@
 Laying the foundation
 =====================
 ---
-#<img src="img/workshop/1/h5bp-ss.jpg" class="focus-border">
+# <img src="img/workshop/1/h5bp-ss.jpg" class="focus-border">
 ---
 
 ## HTML5 Boilerplate
