@@ -965,18 +965,22 @@ else
             /gm, function(){...});
             */
 
-            text = text.replace(/(^|[^\\])(`+)(?:\.(\w+) ?)?(runnable )?([^\r]*?[^`])\2(?!`)/gm,
-                function (wholeMatch, m1, m2, className, runnable, m3, m4) {
-                    var c = m3, match;
-                    className = ' class="' + (className || '') + '"';
+//            text = text.replace(/(^|[^\\])(`+)(?:\.(\w+) ?)?(runnable )?([^\r]*?[^`])\2(?!`)/gm,
+//              function (wholeMatch, m1, m2, className, runnable, m3, m4) {
+              text = text.replace(/(^|[^\\])(`+)(runnable )?([^\r]*?[^`])\2(?!`)/gm,
+                function (wholeMatch, m1, m2, runnable, m3, m4) {
+                  var c = m3, match;
+                    //className = ' class="' + (className || '') + '"';
                     if (match = m3.match(/^src=['"]([^'"]+)["']$/)) {
-                      return m1 + "<pre><code" + className + (runnable ? " runnable='true'" : '') + " src='" + match[1] + "' ></code></pre>";
+                      //return m1 + "<pre><code" + className + (runnable ? " runnable='true'" : '') + " src='" + match[1] + "' ></code></pre>";
+                      return m1 + "<pre><code" + (runnable ? " runnable='true'" : '') + " src='" + match[1] + "' ></code></pre>";
                     }
                     c = c.replace(/^([ \t]*)/g, ""); // leading whitespace
                     c = c.replace(/[ \t]*$/g, ""); // trailing whitespace
                     c = _EncodeCode(c);
                     c = c.replace(/:\/\//g, "~P"); // to prevent auto-linking. Not necessary in code *blocks*, but in code spans. Will be converted back after the auto-linker runs.
-                    return m1 + "<code" + className + (runnable ? " runnable='true'" : '') + ">" + c + "</code>";
+                    return m1 + "<code" + (runnable ? " runnable='true'" : '') + ">" + c + "</code>";
+                    //return m1 + "<code" + className + (runnable ? " runnable='true'" : '') + ">" + c + "</code>";
                 }
             );
 
