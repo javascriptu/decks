@@ -98,7 +98,7 @@ Specifying a model allowed us to add raw data and have our Collection automatica
 ---
 ## Events
 
-### Collection events allow you to trigger actions based off actions that occur on a list
+### Collection events allow you to trigger code based off actions that occur on a list
 
 - ### `add`
 - ### `remove`
