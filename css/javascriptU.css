@@ -276,3 +276,7 @@ pre.min {
   background-color: #dddddd;
   border-right: 1px solid #999 !important;
   color: #000 !important; }
+
+.noli {
+  list-style-type: none;
+}

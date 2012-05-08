@@ -1,0 +1,1 @@
+template  : _.template(blogTemplate)
