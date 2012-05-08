@@ -1,3 +1,5 @@
+# Underscore <br />Collections
+---
 ### `_.each(list, iterator, [context])`
 ### Alias: `forEach`
 
@@ -246,4 +248,12 @@ Returns a shuffled clone of the list.
 
 Run multiple times!
 ---
+#### `_.size(list)`
+### &nbsp;
+
+Returns the number of values in the list.
+
+	.runnable  globals='_'
+	
+	console.log(_.size({one:1,two:2,three:3}));
 

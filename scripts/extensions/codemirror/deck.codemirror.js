@@ -67,7 +67,7 @@ function deck_CodeMirror() {
     // Seek out and cache all cleanup scripts
     $("script[type=\"codemirror/cleanup\"]").each(function() {
       cleanupScripts.push({
-        selector: $(this).data("selector"),
+        selector: $(this).data("selector") || $(this).prev('pre').children('code'),
         src: this.innerHTML
       });
     });
@@ -224,7 +224,7 @@ function deck_CodeMirror() {
                   var value = arguments[i];
                   messages.push(typeof(value) == 'object' ? JSON.stringify(value) : String(value));
                 }
-                var msg = messages.join(" ");
+                var msg = messages.join(" ").replace(/</g,'&lt;');
                 if (output.html() !== "") {
                   output.append("<br />" + msg);
                 } else {
