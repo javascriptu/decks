@@ -104,5 +104,30 @@
 
 ---
 
+---
+# The Build Step
+---
+
+### Use Node To Minify & Uglify the Application
+  - A nifty piece of RequireJS is its Optimizer
+  - The Optimizer can be run using either Node (>= 0.4.0) or using Java (>= 1.6) with Rhino.
+  - We chose the node route, of coarse, keeping it simple with an extra uglify step to obscure the code.
+  - First you start with a package.json
+  - So Whats ours look like?
+---
+### Our <strong>package.json</strong>
+  <pre class='min'><code src="require-backbone/require-package.js"></code></pre>
+
+---
+
+### Running the Build Step
+  - You need Node Installed (>= 0.4.0)
+  - Navigate to the root directory of your application
+  - Run this:
+    <pre class='min'><code>node r.js -o app.build.js</code></pre>
+  - This will create a built directory - htdocs-build which contains all the optimized code
+  - Now your code is a little bit obscured and minified
+
+---
 # On To The Blog App
 ---
