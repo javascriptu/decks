@@ -258,7 +258,14 @@ Specifying a model allowed us to add raw data and have our Collection automatica
 ##.center Plus a massive assortment of Underscore methods
 
 ###.center All underscore methods are native to your collection objects
+---
+## Collections recap
 
+- ### Lists of *stuff*
+- ### Loads more functionality than native Arrays
+- ### Can manage events on individual models
+- ### Triggers events on actions you'll want to know about
+- ### You won't want to go back to Arrays
 
 
 

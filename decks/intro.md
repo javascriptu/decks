@@ -3,5 +3,3 @@
   <h2>Open Source Education</h2>
 </div>
 ---
-# Follow @javascriptu<br>for Q&A
----

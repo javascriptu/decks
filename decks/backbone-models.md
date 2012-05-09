@@ -10,6 +10,12 @@
 ---
 ## Models
 
+> Models are the heart of any JavaScript application, containing the
+> interactive data as well as a large part of the logic surrounding
+> it: conversions, validations, computed properties, and access control.
+---
+## Models
+
 
     Backbone.Model.extend(properties [, classProperties]);
 
@@ -185,7 +191,7 @@ Events
 - ### `.destroy()` delete
 - ### Each delegate to `.sync()`
 ---
-## Synching
+## Syncing
 
 ### You can override `.sync()`
 
@@ -202,3 +208,11 @@ Events
 Try changing the last line to
 
     user.set('id', '1').save();
+---
+## Models recap
+
+- ### The smallest pieces of data that make sense to encapsulate
+- ### Backbone provides you with loads of functionality you *will* want
+- ### You can use as little or as much as you need
+- ### Models can be managed in lists via Collections
+
