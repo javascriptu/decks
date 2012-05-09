@@ -1,4 +1,4 @@
-# Underscore<br />Function ... Functions
+# Underscore<br>Function ... Functions
 
 ---
 ### `_.bind(function, object, [arguments])`
@@ -21,10 +21,12 @@ Binds a number of methods on the object, specified by methodNames, to be run in 
 	  onClick : function(){ alert('clicked: ' + this.label); },
 	  onHover : function(){ console.log('hovering: ' + this.label); }
 	};
+
 	_.bindAll(buttonView);
+
 	jQuery('#underscore_button').bind('click', buttonView.onClick);
 	
-- Very handy for binding functions that are going to be used as event handlers, which would otherwise be invoked with a fairly useless this. 
+- Very handy for binding functions that are going to be used as event handlers, which would otherwise be invoked with a fairly useless `this`.
 - If no methodNames are provided, all of the object's function properties will be bound to it.
 
 ---
@@ -32,9 +34,20 @@ Binds a number of methods on the object, specified by methodNames, to be run in 
 
 Memoizes a given function by caching the computed result.
 
-	var fibonacci = _.memoize(function(n) {
-	  return n < 2 ? n : fibonacci(n - 1) + fibonacci(n - 2);
-	});
+    .runnable globals='_'
+
+    var timesRun = 0;
+    function fibonacci(n) {
+      timesRun++;
+      return n == 1 || n == 0 ? n : fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    //fibonacci = _.memoize(fibonacci);
+
+    console.log(fibonacci(10));
+    console.log('Ran ' + timesRun + ' times');
+
+Uncomment the memoize line and compare the change in timesRun. Memoization caches results based off of input values.
 	
 - Useful for speeding up slow-running computations. 
 - If passed an optional hashFunction, it will be used to compute the hash key for storing the result, based on the arguments to the original function. 
@@ -63,7 +76,9 @@ Defers invoking the function until the current call stack has cleared, similar t
 ---
 ### `_.throttle(function, wait)`
 
-Creates and returns a new, throttled version of the passed function, that, when invoked repeatedly, will only actually call the original function at most once per every wait milliseconds. Useful for rate-limiting events that occur faster than you can keep up with.
+Creates and returns a new, throttled version of the passed function that, when invoked repeatedly,
+will only actually call the original function at most once per every wait milliseconds.
+Useful for rate-limiting events that occur faster than you can keep up with.
 
 	var throttled = _.throttle(updatePosition, 100);
 	$(window).scroll(throttled);
@@ -73,8 +88,8 @@ Creates and returns a new, throttled version of the passed function, that, when 
 
 Creates and returns a new debounced version of the passed function that will postpone its execution until after `wait` milliseconds have elapsed since the last time it was invoked.
 
-	var lazyLayout = _.debounce(calculateLayout, 300);
-	$(window).resize(lazyLayout);
+    var lazyLayout = _.debounce(calculateLayout, 300);
+    $(window).resize(lazyLayout);
 	
 	
 - Useful for implementing behavior that should only happen after the input has stopped arriving.
@@ -85,54 +100,57 @@ Creates and returns a new debounced version of the passed function that will pos
 
 Creates a version of the function that can only be called one time.
 
-	.runnable globals='_'
-	
-	function runOnce(say) {
-		return say;
-	}
-	
-	 var initialize = _.once(runOnce);
-	
-	console.log(initialize("Hello World!"));
-	console.log(initialize("Hello Again!"));
+    .runnable globals='_'
+    function runOnce(say) {
+      return say;
+    }
+
+    var initialize = _.once(runOnce);
+
+    console.log(initialize("Hello World!"));
+    console.log(initialize("Hello Again!"));
 	
 ---
 ### `_.after(count, function)`
 
 Creates a version of the function that will only be run after first being called count times.
 
-	.runnable globals='_'
-	
-	function runAfter() {
-		return "Hit!";
-	}
-	
-	var runAfter5 = _.after(5, runAfter);
-	
-	_.each([1,2,3,4,5], function(num) {
-		var attempt = runAfter5() || "Miss";
-		console.log("Try #" + num + " was a " + attempt);
-	});
-	
+    .runnable globals='_'
+
+    function runAfter() {
+      return "Hit!";
+    }
+
+    var runAfter5 = _.after(5, runAfter);
+
+    _.each([1,2,3,4,5], function(num) {
+      var attempt = runAfter5() || "Miss";
+      console.log("Try #" + num + " was a " + attempt);
+    });
+
 ---
 ### `_.wrap(function, wrapper)`
 
 Wraps the first function inside of the wrapper function, passing it as the first argument. This allows the wrapper to execute code before and after the function runs, adjust the arguments, and execute it conditionally.
 
-	.runnable globals='_'
-	var hello = function(name) { return "hello: " + name; };
-	hello = _.wrap(hello, function(func) {
-	  return "before, " + func("moe") + ", after";
-	});
-	console.log(hello());
+    .runnable globals='_'
+    var hello = function(name) { return "hello: " + name; };
+
+    hello = _.wrap(hello, function(func) {
+      return "before, " + func("moe") + ", after";
+    });
+
+    console.log(hello());
 	
 ---
 ### `_.compose(functions)`
 
 Returns the composition of a list of functions, where each function consumes the return value of the function that follows.
 
-	.runnable globals='_'
-	var greet    = function(name){ return "hi: " + name; };
-	var exclaim  = function(statement){ return statement + "!"; };
-	var welcome = _.compose(exclaim, greet);
-	console.log(welcome('moe'));
+    .runnable globals='_' highlight="compose"
+    var greet    = function(name){ return "hi: " + name; };
+    var exclaim  = function(statement){ return statement + "!"; };
+
+    var welcome = _.compose(exclaim, greet);
+
+    console.log(welcome('moe'));
