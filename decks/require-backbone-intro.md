@@ -2,7 +2,7 @@
 ---
 
 ### We've Put Together A Simple Blog Application
-  - You can take a look at the source at <h3 class='center'>http://github.com/javascriptu/backbone-blog</h3>
+  - You can take a look at the source at <h3 class='center'>http://github.com/javascriptu/backbone-blogs</h3>
   - We've implemented this App using RequireJS, Backbone, Underscore, jQuery, And Twitter Bootstrap
   - These are the frameworks that help assemble many of our applications
   - Feel free to extend it and make it better suit your needs
