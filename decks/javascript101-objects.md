@@ -85,6 +85,7 @@
 - Used to work with mathematical values.
 - Has set of mathematical methods when working with integers.
 
+---
 ## Objects
 #### RegExp
 
