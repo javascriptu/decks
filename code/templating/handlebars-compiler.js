@@ -1,0 +1,1 @@
+handlebars INPUT -f OUTPUT
