@@ -280,3 +280,12 @@ pre.min {
 .noli {
   list-style-type: none;
 }
+
+#stache-container div {
+  float:left;
+}
+
+#stache-container img {
+  width:90px;
+  height:90px;
+}

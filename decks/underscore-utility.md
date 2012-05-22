@@ -12,7 +12,7 @@ Gives control of the "_" variable to its previous owner. Returns a reference to 
 
 Returns the same value that is used as the argument. Useful mostly as a default iterator.
 
-    .runnable globals='_'
+    .runnable globals='Handlebars'
     var moe = {name: 'moe'};
     console.log(_.identity(moe) === moe);
 	

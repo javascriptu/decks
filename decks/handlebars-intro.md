@@ -7,10 +7,7 @@
   - Pick the template solution that has a good api and clean syntax
   - Logic vs Logic-less?
   - Mixing Logic with the templates can get hairy but how much logic is too much?
-
-  - ONE MORE PIECE OF CONTENT @todo
-
-  - <img src="img/decks/templates-handlebars/handlebars_logo.png" />
+  - <img src="img/decks/handlebars/handlebars_logo.png" />
 
 ---
 ### Handlebars
@@ -39,8 +36,6 @@
   - You can then render the template by passing a data object (context) into this function.
   - Caching this template is key, You can re-render this template at any time without re-compiling it again.
 
-  - ELABORATE MORE ON THIS @todo
-
 ---
 ### Handlebars {{ Expressions & Helpers }}
   - Handlebars has the concept of an expression and a helper that contains logic
@@ -58,14 +53,21 @@
 ### Handlebars Helpers
   - "Handlebars helpers can be accessed from any context in a template. You can register a helper with the Handlebars.registerHelper method." - handlebarsjs
   - These helpers are are registered with the Handlebars runtime and available when rendering the template
-  - So What does this look like?
-
-  - INSERT SIMPLE RUNNABLE EXAMPLE THAT INCORPORATES A HELPER @todo
+  - Handlebars invokes its helper functions with a variable (this) reflecting the current context.
+  - Helpers can also take a context (using paths)
+  - Helpers give us some logic-less "flexibility"
 
 ---
-### Handlebars & RequireJS
+### What's It look like?
+- The Template
+code class='runnable' src='templating/handlebars-template.html'
 
-  - SHOW EXAMPLE HOW LOADING TEMPLATES WITH REQUIRE WORKS
+---
+### What's It look like?
+<div id='stache-container'>The Javascript</div>
+<div style='clear:both'></div>
+
+code src="templating/handlebars-example.js" class="code" runnable='true' globals='Handlebars,$'>
 
 ---
 ### Worried about browser compilation?
