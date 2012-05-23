@@ -1,3 +1,7 @@
 <input id="mid" 
-data-bind="value: firstName, valueUpdate: 'keyup'" /><br />
-<div data-bind="visible: firstName() == 'Jess'"> Wow That is my name too! </div>
+data-bind="value: firstName, 
+	valueUpdate: 'keyup'" />
+<br />
+<div 
+	data-bind="visible: firstName() == 'Macgyver'"> 
+	Wow That is my name too! </div>

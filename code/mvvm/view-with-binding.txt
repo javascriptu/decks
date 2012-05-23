@@ -1,2 +1,4 @@
-<p>First Name: <strong data-bind="text: firstName">Unknown</strong></p>
-<p>Last Name: <strong data-bind="text: lastName">Unknown</strong></p>
+<p>First Name: 
+	<strong data-bind="text: firstName">Unknown</strong></p>
+<p>Last Name: 
+	<strong data-bind="text: lastName">Unknown</strong></p>
