@@ -2,9 +2,6 @@ Model - View - ViewModel
 ==============================
 
 ---
-# Follow Along<br />[bit.ly/sdjs-mvvm]()
----
-
 ## Software Design Patterns
 
 - Software design patterns provide a template or methodology for solving common development issues.
@@ -56,7 +53,7 @@ Model - View - ViewModel
 - Newest pattern created by Microsoft for use with Silverlight and WPF.
 - Allows for 2-way communication.
 - ViewModels bind themselves to Views.
-- ViewModels synchronize the View and Model by listen to updates in both directions.
+- ViewModels synchronize the View and Model by listening to updates in both directions.
 - Converts data if needed.
 - 1 ViewModel per View. 
 
@@ -83,10 +80,14 @@ Model - View - ViewModel
 ## MVVM
 #### Models
 
+	var TodoModel = function(content, done) {
+		this.content = ko.observable(content);
+		this.done = ko.observable(done);
+		this.editing = ko.observable(false);
+	}
+	
 - Contains domain specific data.
 - Usually just passes data from the Server but can also have validation functions (i.e. test if email address is valid.).
-
-	code src="mvvm/mvvm-model-basic.js"
 	
 ---
 ## MVVM
@@ -102,10 +103,18 @@ Model - View - ViewModel
 ## MVVM
 #### ViewModels
 
+	function appViewModel() {
+		this.firstName = ko.observable("GI");
+		this.lastName = ko.observable("Joe");
+		this.fullName = ko.computed(function() {
+			return this.firstName + " " + this.lastName; 
+		}, this);
+	}
+	
+	ko.applyBindings(new appViewModel());
+
 - The "Man-in-the-middle".
 - Manages the 2-way data-binding.
-
-	code src="mvvm/mvvm-viewmodel-basic.js"
 
 ---
 ## MVVM
@@ -133,7 +142,7 @@ Model - View - ViewModel
 
 - Views can even perform logical functions inside the binding.
 
-	code src="mvvm/views-logic.txt" linewrapping="true"
+	code src="mvvm/views-logic.txt"
 	
 ---
 ## MVVM
@@ -141,6 +150,7 @@ Model - View - ViewModel
 
 - UI Designers can set data-bindings that ViewModels will attach to.
 - With frameworks like KnockoutJS you can add functions inside the View.
+- You can create map bindings based on JSON data.
 
 ---
 ## Final Thoughts

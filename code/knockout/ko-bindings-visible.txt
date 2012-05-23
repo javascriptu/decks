@@ -1,0 +1,3 @@
+<div data-bind="visible: firstName()">
+	<span>You will only see me when the first name exists.</span>
+</div>

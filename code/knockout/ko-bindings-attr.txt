@@ -1,0 +1,3 @@
+<a data-bind="attr: {href: url}">Link</a>
+<a data-bind="attr: {href: url, title: description}">Link</a>
+<a data-bind="attr: {'data-something': something}">Link</a>

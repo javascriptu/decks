@@ -1,0 +1,3 @@
+<ul data-bind="foreach: superHeroes">
+	<li data-bind="text: name"></li>
+</ul>
