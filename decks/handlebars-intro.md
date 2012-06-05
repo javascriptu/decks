@@ -7,8 +7,7 @@
   - Pick the template solution that has a good api and clean syntax
   - Logic vs Logic-less?
   - Mixing Logic with the templates can get hairy but how much logic is too much?
-  - <img src="img/decks/handlebars/handlebars_logo.png" />
-
+<div><img class='slide center noli' src="img/decks/handlebars/handlebars_logo.png" /></div>
 ---
 ### Handlebars
   - Check out http://tryhandlebarsjs.com To see it in action
@@ -47,7 +46,8 @@
   - The <em>each</em> block helper - <strong> {{#each foo}} {{/each}} </strong>
   - The <em>if</em> block helper -  <strong> {{#if foo}} {{/if}} </strong>
   - The <em>unless</em> block helper  <strong> {{#unless foo}} {{/unless}} </strong>
-  - <h3 class='slide center'>What happens when we need some custom logic? </h3>
+
+<h3 class='slide center noli'>What happens when we need some custom logic? </h3>
 
 ---
 ### Handlebars Helpers
@@ -64,10 +64,12 @@ code class='runnable' src='templating/handlebars-template.html'
 
 ---
 ### What's It look like?
-<div id='stache-container'>The Javascript</div>
-<div style='clear:both'></div>
+<p>The Javascript</p>
 
 code src="templating/handlebars-example.js" class="code" runnable='true' globals='Handlebars,$'>
+
+<div id='stache-container'></div>
+<div style='clear:both'></div>
 
 ---
 ### Worried about browser compilation?

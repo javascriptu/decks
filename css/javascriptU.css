@@ -198,6 +198,10 @@ p {
 li {
   font-size: 28px !important; }
 
+li.no-list-style {
+  list-style-type: none;
+}
+
 #title-slide h2 {
   position: absolute;
   top: 50%;
@@ -281,11 +285,16 @@ pre.min {
   list-style-type: none;
 }
 
+#stache-container {
+  margin: auto;
+  width: 415px;
+}
+
 #stache-container div {
   float:left;
 }
 
 #stache-container img {
-  width:90px;
-  height:90px;
+  width:120px;
+  height:120px;
 }
