@@ -887,8 +887,16 @@ else
             /g ,function(){...});
             */
 
-          text = text.replace(/^code(?:#([^ ]*))?(.*)$/m,function(wholeMatch, id, attributes){
+          text = text.replace(/^code(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/m,function(wholeMatch, id, className, attributes){
             return "<pre><code class='code' id='" + id + "' " + attributes + "></code></pre>";
+          });
+
+          text = text.replace(/^term(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/m,function(wholeMatch, id, className, attributes){
+            return "<pre class='term " + className + "'><code class='' id='" + id + "' " + attributes + "></code></pre>";
+          });
+          text = text.replace(/^file(?:#([^ ]*))?(?:\.([^ ]*))?(?:\s"([^"]+)")?(.*)$/m,function(wholeMatch, id, className, name, attributes){
+            name = name || '';
+            return "<pre class='file " + className + "'><h3>"+name+"</h3><code class='' id='" + id + "' " + attributes + "></code></pre>";
           });
 
           // attacklab: sentinel workarounds for lack of \A and \Z, safari\khtml bug

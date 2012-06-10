@@ -278,14 +278,26 @@ pre.min {
   color: #000 !important; }
 
 .noli {
-  list-style-type: none;
-}
+  list-style-type: none; }
 
 #stache-container div {
-  float:left;
-}
-
+  float: left; }
 #stache-container img {
-  width:90px;
-  height:90px;
-}
+  width: 90px;
+  height: 90px; }
+
+pre.term {
+  background: black url("") !important;
+  color: white !important;
+  border: 1px solid green !important; }
+  pre.term code {
+    color: white !important;
+    background-color: inherit; }
+    pre.term code .node-undef {
+      color: #999; }
+    pre.term code .node-number {
+      color: yellow; }
+    pre.term code .node-string {
+      color: #0f0; }
+    pre.term code .node-function {
+      color: cyan; }

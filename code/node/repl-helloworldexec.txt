@@ -1,0 +1,5 @@
+~ $ node
+> console.log('Hello, World!');
+Hello, World!
+<span class="node-undef">undefined</span>
+>

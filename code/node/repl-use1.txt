@@ -1,0 +1,4 @@
+~ $ node
+> Infinity + 2
+<span class="node-number">Infinity</span>
+>

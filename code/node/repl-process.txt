@@ -1,0 +1,14 @@
+~ $ node
+> process.versions
+{ node: <span class="node-string">'0.6.9'</span>,
+  v8: <span class="node-string">'3.6.6.19'</span>,
+  ares: <span class="node-string">'1.7.5-DEV'</span>,
+  uv: <span class="node-string">'0.6'</span>,
+  openssl: <span class="node-string">'0.9.8r'</span> }
+> process.pid
+<span class="node-number">59577</span>
+> process.argv
+[ <span class="node-string">'node'</span> ]
+> process.execPath
+<span class="node-string">'/usr/local/bin/node'</span>
+>
