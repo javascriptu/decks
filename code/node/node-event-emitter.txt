@@ -1,0 +1,28 @@
+var util = require('util'),
+  events = require('events');
+
+var Blog = function() {
+  //Constructor for super class
+  events.EventEmitter.call(this);
+
+  this.create = function(title, content) {
+    var blog = {title : title , content : content };
+    //do something with the data
+    this.emit('create',blog);
+  }
+
+  var _validate = function(blog) {
+    //validate the data
+    this.emit('validated', blog);
+  };
+  var _create = function(blog) {
+    blog.id = 123;
+    this.emit('created', blog);
+  }
+  //Allow us to call private methods
+  this.on('create', _validate);
+  this.on('validated', _create);
+};
+
+util.inherits(Blog,events.EventEmitter);
+module.exports = Blog;

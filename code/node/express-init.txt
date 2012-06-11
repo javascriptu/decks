@@ -1,0 +1,9 @@
+var express = require('express'),
+  app = express.createServer();
+
+app.get('/', function(req, res){
+  res.send('hello world');
+});
+
+app.listen(4000);
+console.log('Server started on port %s', app.address().port);

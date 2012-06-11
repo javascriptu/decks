@@ -1,0 +1,10 @@
+function processFile(err, data) {
+     console.log("In Callback");
+     console.log(data);
+}
+
+function getConfig(fileName, callback) {
+   fs.readFile(fileName, 'utf8', callback);
+   console.log("After Read File - Non Blocking");
+ }
+

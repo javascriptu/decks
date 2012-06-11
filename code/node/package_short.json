@@ -1,0 +1,12 @@
+{
+  "name": "express-bootstrap",
+  "version": "0.0.1",
+  "author": "JavascriptU",
+  "description": "A Basic Express Bootstrap",
+  "dependencies" : {
+    "express"   : "*"
+  },
+  "devDependencies" : {
+    "jasmine-node"    :  "*"
+  }
+}

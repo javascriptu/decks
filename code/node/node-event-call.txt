@@ -1,0 +1,2 @@
+> MyBlog.create('first blog','blog body');
+{ title: 'first blog', content: 'blog body', id: 123 }

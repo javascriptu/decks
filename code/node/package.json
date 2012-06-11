@@ -1,0 +1,28 @@
+{
+  "name": "project name",
+  "version": "0.0.1",
+  "author": "JavascriptU",
+  "description": "A Description of your application",
+  "bin": {
+    "http-server": "./bin/http-server" //EXPLAIN THIS AND LOOK UP MORE ABOUT IT
+  },
+  "scripts": {
+    "start": "node ./bin/http-server", //like geddy
+    "test": "vows --spec" // requires devdependencies
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/this/project.git"
+  },
+  "dependencies" : {
+    "express"   : "2.4.x"
+  },
+  "devDependencies": {
+    "jasmine-node": "*"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.4"
+  }
+}
+

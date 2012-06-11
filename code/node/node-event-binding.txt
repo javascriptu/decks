@@ -1,0 +1,6 @@
+var MyBlog = new Blog();
+
+MyBlog.on('created', function(blog) {
+  //Pub Sub Events?
+  console.log(blog);
+});
