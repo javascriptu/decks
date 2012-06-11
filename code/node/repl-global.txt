@@ -1,0 +1,22 @@
+~ $ node
+> this
+{ ArrayBuffer: <span class="node-function">[Function: ArrayBuffer]</span>,
+  Int8Array: { [Function: Int8Array] BYTES_PER_ELEMENT: <span class="node-number">1</span> },
+  Uint8Array: { [Function: Uint8Array] BYTES_PER_ELEMENT: <span class="node-number">1</span> },
+  Int16Array: { [Function: Int16Array] BYTES_PER_ELEMENT: <span class="node-number">2</span> },
+  Uint16Array: { [Function: Uint16Array] BYTES_PER_ELEMENT: <span class="node-number">2</span> },
+  Int32Array: { [Function: Int32Array] BYTES_PER_ELEMENT: <span class="node-number">4</span> },
+  Uint32Array: { [Function: Uint32Array] BYTES_PER_ELEMENT: <span class="node-number">4</span> },
+  Float32Array: { [Function: Float32Array] BYTES_PER_ELEMENT: <span class="node-number">4</span> },
+  Float64Array: { [Function: Float64Array] BYTES_PER_ELEMENT: <span class="node-number">8</span> },
+  DataView: <span class="node-function">[Function: DataView]</span>,
+  global: <span class="node-function">[Circular]</span>,
+  process: 
+   { title: <span class="node-string">'node'</span>,
+     EventEmitter: <span class="node-function">[Function: EventEmitter]</span>,
+     assert: <span class="node-function">[Function]</span>,
+     version: <span class="node-string">'v0.6.9'</span>,
+     _tickCallback: <span class="node-function">[Function]</span>,
+     moduleLoadList: 
+      [ <span class="node-string">'Binding evals'</span>,
+        <span class="node-string">'Binding natives'</span>,

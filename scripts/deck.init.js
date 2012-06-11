@@ -82,7 +82,18 @@ function highlightInit() {
   return deferred;
 
   function handleDeferred() { if (++numComplete >= requests.length) deferred.resolve(); }
-  function addSource(text)  { this.html(text) }
+  function addSource(text)  {
+    if (this.attr('lines')) {
+      var textParts = text.split("\n");
+      var lines = this.attr('lines').split('-');
+      if (!lines[1]) {
+        text = textParts.slice(lines[0] - 1, lines[0]).join("\n");
+      } else {
+        text = textParts.slice(lines[0] - 1, lines[1]).join("\n");
+      }
+    }
+    this.html(text)
+  }
   function retrieveFail()   { this.html("There was an error loading:" + this.attr('src')) }
 }
 

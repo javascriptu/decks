@@ -30,10 +30,10 @@
 
 .cm-s-default span.highlight, .cm-s-default  pre.highlight {
   color:black !important;
-  background:rgb(0, 204, 255) !important;
-  -webkit-border-radius: 5px !important;
-  -moz-border-radius: 5px !important;
-  border-radius: 5px !important;
+  background: rgb(255, 255, 0) !important;
+  -webkit-border-radius: 2px !important;
+  -moz-border-radius: 2px !important;
+  border-radius: 2px !important;
   -webkit-box-shadow: 1px 1px 2px 0px black;
   -moz-box-shadow: 1px 1px 2px 0px black;
   box-shadow: 1px 1px 2px 0px black;
