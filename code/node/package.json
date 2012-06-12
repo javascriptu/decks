@@ -4,7 +4,7 @@
   "author"       : "your-name",
   "description" : "This is the description",
   "dependencies" : {
-    "underscore" : "*"
+    "commander" : "*"
   },
   "license" : "MIT"
 }

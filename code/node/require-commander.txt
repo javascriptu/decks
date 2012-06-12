@@ -1,0 +1,8 @@
+$ node
+> require('commander')
+{ commands: [],
+  options: [],
+  args: [],
+  name: undefined,
+  Command: [Function: Command],
+  Option: [Function: Option] }

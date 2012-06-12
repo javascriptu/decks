@@ -6,8 +6,7 @@
 - Those languages are considered `blocking` languages
 - Most are used to their Procedural Paradigm
 - So what's this Event Driven Paradigm all about?
-- Fast Food Analogy
-- @todo Insert The Graphics For Blocking / Non-Blocking
+- @todo Insert The Graphics For Blocking / Non-Blocking Analogy
 ---
 
 ### Whats a callback and why do I care?

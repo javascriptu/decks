@@ -68,11 +68,25 @@ term.slide src='node/npm-install.txt'
 <pre class='term slide'><code src='node/npm-install-result.txt'></code></pre>
 
 ###.slide Lets Check
-<pre class='term slide'><code src='node/require-underscore.txt'></code></pre>
+<pre class='term slide'><code src='node/require-commander.txt'></code></pre>
 <h2 class='slide center'> What can we do with this?</h2>
 ---
 
-### INSERT EXAMPLE HERE
-- cat program is a standard Unix utility that concatenates and lists files.
-- lets build a quick implementation of this using node and underscore
-- Start out by creating node-cat.js and open it with your favorite editor
+### Using 3rd Party Require Modules
+- I've chosen to demonstrate commander, What is it?
+- Commander.js is a small node.js module allowing you to define options and interact with the user’s terminal in a simple and natural way.
+<h3 class='center slide'>Create bootstrap.js and open it with your favorite editor</h3>
+---
+
+### Commander
+<pre><code src='node/npm-commander.js' class='code' highlight='require'></code></pre>
+---
+
+### Commander
+<pre><code src="node/npm-commander.js" class="code" highlight='.parse'></code></pre>
+---
+
+### Commander
+<pre><code src="node/npm-commander.js" class="code"></code></pre>
+---
+
