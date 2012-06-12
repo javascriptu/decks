@@ -887,11 +887,11 @@ else
             /g ,function(){...});
             */
 
-          text = text.replace(/^code(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/m,function(wholeMatch, id, className, attributes){
+          text = text.replace(/^code(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/gm,function(wholeMatch, id, className, attributes){
             return "<pre><code class='code' id='" + id + "' " + attributes + "></code></pre>";
           });
 
-          text = text.replace(/^term(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/m,function(wholeMatch, id, className, attributes){
+          text = text.replace(/^term(?:#([^ ]*))?(?:\.([^ ]*))?(.*)$/gm,function(wholeMatch, id, className, attributes){
             return "<pre class='term " + className + "'><code class='' id='" + id + "' " + attributes + "></code></pre>";
           });
           text = text.replace(/^file(?:#([^ ]*))?(?:\.([^ ]*))?(?:\s"([^"]+)")?(.*)$/m,function(wholeMatch, id, className, name, attributes){

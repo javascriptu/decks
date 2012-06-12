@@ -1,0 +1,15 @@
+$ sudo npm install -g express
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/express
+npm <span class="green">http</span> 200 https://registry.npmjs.org/express
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/connect
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/qs
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/mkdirp/0.3.0
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/mime/1.2.4
+npm <span class="green">http</span> 200 https://registry.npmjs.org/mkdirp/0.3.0
+[cut]
+/usr/local/bin/express -> /usr/local/lib/node_modules/express/bin/express
+express@2.5.9 /usr/local/lib/node_modules/express
+├── mime@1.2.4
+├── mkdirp@0.3.0
+├── qs@0.4.2
+└── connect@1.8.7

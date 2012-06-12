@@ -1,0 +1,17 @@
+~ $ npm install
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/express/2.5.8
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/jade
+npm <span class="green">http</span> 200 https://registry.npmjs.org/express/2.5.8
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/express/-/express-2.5.8.tgz
+npm <span class="green">http</span> 200 https://registry.npmjs.org/jade
+npm <span class="green">http</span> <span class="magenta">GET</span> https://registry.npmjs.org/jade/-/jade-0.26.1.tgz
+npm <span class="green">http</span> 200 https://registry.npmjs.org/express/-/express-2.5.8.tgz
+[cut]
+express@2.5.8 ./node_modules/express
+├── qs@0.4.2
+├── mime@1.2.4
+├── mkdirp@0.3.0
+└── connect@1.8.7
+jade@0.26.1 ./node_modules/jade
+├── commander@0.5.2
+└── mkdirp@0.3.0

@@ -108,11 +108,11 @@ term src="node/run-http-helloworld.txt"
 ### Choose a framework
    Unless we have very specific needs (and know what we're doing), we should always investigate existing web frameworks.
 
-- ### Express - [expressjs.org](http://expressjs.org)
-  Inspired by Sinatra, lightweight but very extensible web framework
+- ### Express - [expressjs.com](http://expressjs.com)
+  Inspired by Sinatra, lightweight and very extensible web framework
 - ### Geddy - [geddyjs.org](http://geddyjs.org)
-  Similar to the spirit of rails, focusing on RESTful apis
+  Similar to the spirit of rails, enabling easy RESTy apis
 - ### Flatiron - [flatironjs.org](http://flatironjs.org)
-  Full-stack framework that answers some questions for you
+  Full-stack framework that limits the questions you'll need to ask
 - ### Derby - [derbyjs.com](http://derbyjs.com/)
   A post-modern web stack. Focuses on blurring the line between server and client
