@@ -1,0 +1,2 @@
+file.get('foo.txt');
+file.get('bar.txt');

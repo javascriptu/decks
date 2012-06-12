@@ -1,4 +1,13 @@
-After Read File - Non Blocking
-undefined
-> In Callback
-{'foo' : 'bar' }
+xxxxx - About to Read foo.txt
+xxxxx - After Read foo.txt - Non Blocking
+
+xxxxx - About to Read bar.txt
+xxxxx - After Read bar.txt - Non Blocking
+
+xxxxx - In Callback
+xxxxx - This is my foo.txt Contents
+foo.txt contents
+
+xxxxx- In Callback
+xxxxx - This is my bar.txt Contents
+bar.txt contents

@@ -16,24 +16,28 @@ code src="node/node-event-http.txt" highlight='server.on'
 - What if we want to build event emitting support into our modules?
 ---
 
-### Inheriting the Event Emitter
+### Using Custom Event Emitters
+code src="node/node-event-emitter.txt" lines='1-2'
+---
+
+### Using Custom Event Emitters
+code src="node/node-event-emitter.txt" highlight='events.EventEmitter.call' lines='4-25'
+---
+
+### Using Custom Event Emitters
+code src="node/node-event-emitter.txt" highlight='this.emit' lines='4-25'
+---
+
+### Using Custom Event Emitters
+code src="node/node-event-emitter.txt" highlight='this.on' lines='4-25'
+---
+
+### Extending the Event Emitter
+code src="node/node-event-emitter.txt" highlight='util.inherits'  lines='27-28'
+---
+
+### Extending the Event Emitter
 code src="node/node-event-emitter.txt"
----
-
-### Inheriting the Event Emitter
-code src="node/node-event-emitter.txt" highlight='events.EventEmitter.call'
----
-
-### Inheriting the Event Emitter
-code src="node/node-event-emitter.txt" highlight='this.emit'
----
-
-### Inheriting the Event Emitter
-code src="node/node-event-emitter.txt" highlight='this.on'
----
-
-### Inheriting the Event Emitter
-code src="node/node-event-emitter.txt" highlight='util.inherits'
 ---
 
 ### Lets use this Blog object

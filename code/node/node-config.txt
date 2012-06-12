@@ -1,1 +1,1 @@
-$ echo "{'version' : '0.1' }" >> config.json
+$ echo "foo contents" >> foo.txt && echo "bar contents" >> bar.txt

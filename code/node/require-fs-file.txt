@@ -1,6 +1,3 @@
-var fs = require('fs'),
-  util = require('util');
-
 var file = {
 
   process : function (err, data) {
@@ -14,7 +11,3 @@ var file = {
     util.puts("After Read " + fileName + " - Non Blocking");
   }
 };
-
-//Call The Method to Read the File Asynchronously
-file.get('foo.json');
-file.get('bar.json');

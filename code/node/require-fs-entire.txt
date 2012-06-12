@@ -1,0 +1,19 @@
+var fs = require('fs'),
+  util = require('util');
+
+var file = {
+  process : function (err, data) {
+    util.log("In Callback");
+    if (err) util.error(err);
+    else util.log(data);
+  },
+  get : function (fileName) {
+    util.log("About to Read " + fileName);
+    fs.readFile(fileName, 'utf8', this.process);
+    util.log("After Read " + fileName + " - Non Blocking\n");
+    return this;
+  }
+};
+
+//Call The Method to Read the File Asynchronously
+file.get('foo.txt').get('bar.txt');
