@@ -46,7 +46,7 @@ body {
 
 .focus-border {
   border-radius:25px;
-  box-shadow:0 0 10px 2px hsl(183, 74%, 77%);
+  box-shadow:0 0 10px 2px hsl(183, 74%, 20%);
 }
 
 .center {
@@ -425,3 +425,8 @@ pre.term {
     .node-function { color:cyan; }
   }
 }
+
+.cyan { color: cyan !important}
+.green {color : #0f0 !important}
+.yellow {color : yellow !important}
+.magenta {color: magenta !important}

@@ -1,0 +1,18 @@
+~ $ express myApp
+
+   <span class="cyan">create</span> : myApp
+   <span class="cyan">create</span> : myApp/package.json
+   <span class="cyan">create</span> : myApp/app.js
+   <span class="cyan">create</span> : myApp/public
+   <span class="cyan">create</span> : myApp/public/stylesheets
+   <span class="cyan">create</span> : myApp/public/stylesheets/style.css
+   <span class="cyan">create</span> : myApp/routes
+   <span class="cyan">create</span> : myApp/routes/index.js
+   <span class="cyan">create</span> : myApp/public/javascripts
+   <span class="cyan">create</span> : myApp/views
+   <span class="cyan">create</span> : myApp/views/layout.jade
+   <span class="cyan">create</span> : myApp/views/index.jade
+   <span class="cyan">create</span> : myApp/public/images
+
+   dont forget to install dependencies:
+   $ cd myApp && npm install

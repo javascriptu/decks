@@ -94,6 +94,11 @@ function deck_CodeMirror() {
               }
             );
 
+        if (!!codeblock.attr('lines')) {
+          var lines = codeblock.attr('lines').split('-');
+          options.firstLineNumber = parseInt(lines[0]);
+        }
+
         // if this is a textarea just use the codemirror shorthand.
         if (codeblock.get(0).nodeName.toUpperCase() === "TEXTAREA") {
           editor = CodeMirror.fromTextArea(codeblock[0], options);

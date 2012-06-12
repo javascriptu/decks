@@ -17,7 +17,7 @@ body {
 
 .focus-border {
   border-radius: 25px;
-  box-shadow: 0 0 10px 2px #99ebf0; }
+  box-shadow: 0 0 10px 2px #0d5559; }
 
 .center {
   text-align: center; }
@@ -310,3 +310,15 @@ pre.term {
       color: #0f0; }
     pre.term code .node-function {
       color: cyan; }
+
+.cyan {
+  color: cyan !important; }
+
+.green {
+  color: #0f0 !important; }
+
+.yellow {
+  color: yellow !important; }
+
+.magenta {
+  color: magenta !important; }
