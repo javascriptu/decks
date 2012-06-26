@@ -5,12 +5,7 @@
 - Authentication middleware for Node.js.
 - Extremely flexible and modular
 - Passport can be easily dropped into any Connect/Express-based web app.
-#####.slide "Passport uses what are termed strategies to authenticate requests. Strategies range from verifying username and password credentials, delegated authentication using OAuth or federated authentication using OpenID." - passportjs.org
-- 40+ of these authentication strategies
-- Supports Single sign-on with OpenID and OAuth
-- Supports persistent sessions
-- Dynamic scope and permissions
-- Implement custom strategies
+> "Passport uses what are termed strategies to authenticate requests. Strategies range from verifying username and password credentials, delegated authentication using OAuth or federated authentication using OpenID." - passportjs.org
 ---
 
 ### Local Authentication Strategy
@@ -19,7 +14,7 @@
 <h3 class='center slide'>This separation is key, keeping the database agnostic</h3>
 ---
 
-### ./app
+### `app.js`
 - Express allows us the ability to connect to the session with our Authentication methods
 - In `app.configure` add
 code.slide src="node/passport-setup.js" highlight=''
@@ -36,7 +31,7 @@ code.slide src="node/passport-setup.js" highlight=''
 <h3 class='slide center'>Lets Get Started, Create : /lib/auth/index.js</h3>
 ---
 
-### ./lib/auth
+### `lib/auth/index.js`
 - You want to include Passport, the Local Authentication Strategy and Nohm
 code.slide src="node/passport-auth.js" highlight='' lines='1-4'
 
@@ -45,7 +40,7 @@ code.slide src="node/passport-auth.js" highlight='' lines='19-21'
 - We pass on the user Id so the de-serialize can lookup the user's Id for the User Object
 ---
 
-### ./lib/auth
+### `lib/auth/index.js`
 - What about de-serializing?
 code.slide src="node/passport-auth.js" highlight='' lines='23-32'
 - Grab the User Model From the Factory
@@ -54,20 +49,20 @@ code.slide src="node/passport-auth.js" highlight='' lines='23-32'
 - When the Request finishes we fire the done() callback with the appropriate arguments
 ---
 
-### ./lib/auth
+### `lib/auth/index.js`
 - Now lets implement the Local Strategy
 - Define the local method for passport.authenticate to call
 - `new LocalStrategy(options, verify)` - `done(err,user [,flashMessage])`
 code.slide src="node/passport-auth.js" highlight='' lines='6-17'
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 - Nohm has a section in the model for local access and model method implementations
 - In the methods object create an authenticate method
 <pre class='slide'><code class='code' src="node/passport-authenticate.js"></code></pre>
 ---
 
-### ./routes
+### `routes/index.js`
 - Now we have to tie the Nohm local strategy to the login.post route
 code.slide src="node/passport-authenticate-call.js" highlight='post'
 - On Verify Success go /home
@@ -76,7 +71,7 @@ code.slide src="node/passport-authenticate-call.js" highlight='post'
 
 ### Using authenticate and the local strategy
 - Now you should be set up to use Passport's Local Strategy with a nice decoupling of the authentication layer
-- `./app` (Passport Initialized)
+- `app.js` (Passport Initialized)
 - `./lib/auth` (Defines Strategy)
 - `./lib/models/user` (Methods To Query User Record)
 - `./routes` (Authenticate is tied to login route)

@@ -1,6 +1,6 @@
 authenticate : function (email, password, callback) {
   var self = this;
-  if (!email || email === '' || !password || password === '') {
+  if (!email || !password) {
     callback('invalid input');
     return;
   }
@@ -9,9 +9,7 @@ authenticate : function (email, password, callback) {
       callback('user not found');
     } else {
       self.load(ids[0], function (err) {
-        //nohm hashes on retrieval - better handling for this
-        var pwCompare = hashPassword(hashPassword(password));
-        if (!err && self.p('password') === pwCompare) {
+        if (!err && self.p('password') === password) {
           callback(null, self.allProperties());
         } else {
           callback('invalid password');

@@ -14,15 +14,22 @@
 # So How's It Work?
 ---
 
-### ./app
+### `package.json`
+- You will first need to add the required dependencies for nohm/passport
+code.slide src="node/auth-workshop/step4/package.json" lines='13-17'
+- Yes we need all of these
+term src='term/npm-install.txt'
+---
+
+### `app.js`
 - Require Nohm in app.js
-code.slide src="node/nohm-model.js" highlight='' lines='1'
+code.slide src="node/auth-workshop/step4/app.js" highlight='' lines='9-15'
 - Set the Nohm Client to redisClient
 code src='node/nohm-setClient.js' highlight='Nohm.setClient'
 - Now Nohm is set to use Redis to store the Object Hash mappings
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 - Require Dependencies
 code.slide src="node/nohm-model.js" highlight='' lines='1-3'
 
@@ -32,7 +39,7 @@ code.slide src="node/nohm-model.js" highlight='' lines='5-6'
 - By default the ids associated with the instance are unique strings and are generated on the first save call.
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 code.slide src='node/nohm-model.js' highlight='email' lines='6-8'
 
 - Defining the properties is one of the most important pieces
@@ -45,7 +52,7 @@ code.slide src='node/nohm-model.js' highlight='email' lines='6-8'
   - <em>load_pure</em> (false by default)
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 code.slide src="node/nohm-model.js" highlight='type' lines='8-9'
 
 - Supported Types:
@@ -57,7 +64,7 @@ code.slide src="node/nohm-model.js" highlight='type' lines='8-9'
 - As a User Defined Method With value as the first argument
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 code.slide src="node/nohm-model.js" highlight='unique' lines='9-11'
 
 - Unique allows for unique index among all instances of this model
@@ -67,7 +74,7 @@ code.slide src="node/nohm-model.js" highlight='unique' lines='9-11'
 - Index sets a database index for the specified key/model
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 code.slide src="node/nohm-model.js" highlight='validations' lines='11-15'
 
 - You can use multiple built in Nohm validators for each property
@@ -82,12 +89,12 @@ code.slide src="node/nohm-model.js" highlight='validations' lines='11-15'
     number(value, options)<br/>
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 - Add in the password field
 code.slide src="node/nohm-model.js" highlight='' lines='17-22'
 ---
 
-### ./lib/models/user
+### `lib/models/user.js`
 code.slide src="node/nohm-model.js" highlight='' lines='24'
 
 - If you want your model to have custom methods you can define them here

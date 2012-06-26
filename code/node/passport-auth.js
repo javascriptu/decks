@@ -7,10 +7,10 @@ passport.use(new LocalStrategy({
     usernameField: 'email',
     passwordField: 'password'
   },
-  function(email, password, done) {
+  function(email, pass, done) {
     var user = Nohm.factory('User');
-    user.authenticate(email, password, function(err,userRecord) {
-      if (err) return done(null, false, { message :  err });
+    user.authenticate(email, pass, function(err,userRecord) {
+      if (err) return done(null, null);
       return done(null,userRecord);
     });
   }
