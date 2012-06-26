@@ -40,8 +40,10 @@ We need the cookie parser to store and read the session id (`sid`).
 ---
 ## `app.js`
 ### Configure a new session with our Redis SessionStore
-code src='node/auth-workshop/step3/app.js' highlight='7:*,8:*,9:*' lines='15-27'
-As always, note the order. Do we need this before lessMiddleware and the static server?
+code src='node/auth-workshop/step3/app.js' highlight='7:*,8:*,9:*,10:*' lines='15-27'
+As always, note the order.
+
+Do we need this before lessMiddleware and the static server?
 ---
 ## `routes/index.js`
 ### Add a quick visits counter to our index
@@ -57,7 +59,7 @@ Note the pure JavaScript within the `#{}` block
 ---
 ## `app.js`
 ### Add a "dynamic helper" to inject the session into our template data on each render
-code src='node/auth-workshop/step3/app.js' highlight='' lines='35-41'
+code src='node/auth-workshop/step3/app.js' highlight='' lines='36-41'
 The return of every value of the dynamicHelpers will be available in its respective key.
 ---
 ## Start our redis server
