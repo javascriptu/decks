@@ -97,6 +97,8 @@ function deck_CodeMirror() {
         if (!!codeblock.attr('lines')) {
           var lines = codeblock.attr('lines').split('-');
           options.firstLineNumber = parseInt(lines[0]);
+        } else {
+          options.firstLineNumber = 1;
         }
 
         // if this is a textarea just use the codemirror shorthand.

@@ -1,0 +1,7 @@
+$ redis-server 
+[41975] 25 Jun 23:05:41 # Warning: no config file specified, using the default config.
+[41975] 25 Jun 23:05:41 * Server started, Redis version 2.4.7
+[41975] 25 Jun 23:05:41 * DB loaded from disk: 0 seconds
+[41975] 25 Jun 23:05:41 * The server is now ready to accept connections on port 6379
+[41975] 25 Jun 23:05:42 - DB 0: 5 keys (0 volatile) in 12 slots HT.
+[41975] 25 Jun 23:05:42 - 0 clients connected (0 slaves), 922928 bytes in use

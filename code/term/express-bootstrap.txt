@@ -1,0 +1,3 @@
+$ mv public/stylesheets public/css
+$ mv bootstrap/less/ public/css/bootstrap
+$ ls public/css/bootstrap

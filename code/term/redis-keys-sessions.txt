@@ -1,0 +1,8 @@
+$ redis-cli
+redis 127.0.0.1:6379> <span class="cyan">keys *</span>
+
+1) "sess:kNnKbSAcLXVnOC[...]F13vDFxbFydvA"
+
+redis 127.0.0.1:6379> <span class="cyan">get sess:kNnKbSAcLXVnOC[...]F13vDFxbFydvA</span>
+
+"{\"lastAccess\":1340691489650,\"cookie\":{\"originalMaxAge\":14400000,\"expires\":\"2012-06-26T10:18:09.652Z\",\"httpOnly\":true,\"path\":\"/\"},\"visits\":null}"
