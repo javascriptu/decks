@@ -14,14 +14,6 @@
 # So How's It Work?
 ---
 
-### The Setup
-code src="node/nohm-setup.js" highlight=''
-
-- You first want to require nohm and redis
-- Once Redis is connected set the Redis Client as the Nohm Client
-- Now you should be ready to start building your first Nohm Model
----
-
 ### Basic Usage
 code.slide src="node/nohm-model.js" highlight='' lines='1-2'
 
